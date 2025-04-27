@@ -1,5 +1,5 @@
 <div>
-    <div class="mb-6">
+    <header class="mb-6">
         <flux:heading level="2" class="text-2xl! font-semibold! mb-4">Manage FAQs</flux:heading>
         <div class="flex items-center justify-between gap-4">
             <div class="w-72">
@@ -8,7 +8,7 @@
 
             <flux:button variant="primary" icon="plus" wire:click="create">Create</flux:button>
         </div>
-    </div>
+    </header>
 
     <main>
         <!-- Session Messages -->
