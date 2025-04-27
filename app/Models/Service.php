@@ -15,11 +15,23 @@ class Service extends Model
     protected $fillable = [
         'title',
         'slug',
+        'subtitle',
         'description',
+        'content',
         'icon',
         'image_path',
+        'feature_list',
         'is_active',
         'sort_order',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'feature_list' => 'array',
     ];
 
     /**
