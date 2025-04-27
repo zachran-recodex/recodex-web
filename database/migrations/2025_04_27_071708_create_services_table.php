@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('icon')->nullable();
             $table->string('image_path')->nullable();
             $table->boolean('is_active')->default(true);
+            $table->unsignedInteger('sort_order')->default(0);
             $table->timestamps();
         });
     }

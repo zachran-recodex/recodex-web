@@ -15,5 +15,6 @@ class Faq extends Model
         'question',
         'answer',
         'is_active',
+        'sort_order',
     ];
 }

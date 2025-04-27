@@ -19,6 +19,7 @@ class Service extends Model
         'icon',
         'image_path',
         'is_active',
+        'sort_order',
     ];
 
     /**

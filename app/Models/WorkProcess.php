@@ -15,5 +15,6 @@ class WorkProcess extends Model
         'title',
         'description',
         'is_active',
+        'sort_order',
     ];
 }
