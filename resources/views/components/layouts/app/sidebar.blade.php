@@ -19,6 +19,7 @@
                 <flux:navlist.group :heading="__('CMS')" class="grid">
                     <flux:navlist.item icon="document-text" :href="route('cms.faqs')" :current="request()->routeIs('cms.faqs')" wire:navigate>Manage FAQs</flux:navlist.item>
                     <flux:navlist.item icon="briefcase" :href="route('cms.services')" :current="request()->routeIs('cms.services')" wire:navigate>Manage Services</flux:navlist.item>
+                    <flux:navlist.item icon="users" :href="route('cms.members')" :current="request()->routeIs('cms.members')" wire:navigate>Manage Team Members</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
