@@ -4,6 +4,7 @@ namespace App\Livewire\CMS;
 
 use App\Models\Member;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
@@ -16,6 +17,7 @@ class ManageMembers extends Component
     // Form properties
     public $memberId;
     public $name;
+    public $slug;
     public $position;
     public $description;
     public $photo;
@@ -47,6 +49,7 @@ class ManageMembers extends Component
 
     protected $rules = [
         'name' => 'required|string|max:255',
+        'slug' => 'nullable|max:255',
         'position' => 'nullable|string|max:255',
         'description' => 'nullable|string',
         'photo' => 'nullable|image|max:1024',
@@ -63,11 +66,17 @@ class ManageMembers extends Component
         $this->resetInputFields();
     }
 
+    public function updatedName()
+    {
+        $this->slug = Str::slug($this->name);
+    }
+
     private function resetInputFields()
     {
         $this->reset([
             'memberId',
             'name',
+            'slug',
             'position',
             'description',
             'photo',
@@ -111,6 +120,7 @@ class ManageMembers extends Component
         $member = Member::findOrFail($id);
         $this->memberId = $id;
         $this->name = $member->name;
+        $this->slug = $member->slug;
         $this->position = $member->position;
         $this->description = $member->description;
         $this->current_photo = $member->photo_path;
@@ -132,6 +142,7 @@ class ManageMembers extends Component
 
         $data = [
             'name' => $this->name,
+            'slug' => $this->slug ?: Str::slug($this->name),
             'position' => $this->position,
             'description' => $this->description,
             'social_links' => $this->social_links,
