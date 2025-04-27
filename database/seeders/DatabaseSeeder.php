@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
             FaqSeeder::class,
             ServiceSeeder::class,
+            WorkProcessSeeder::class,
         ]);
     }
 }
