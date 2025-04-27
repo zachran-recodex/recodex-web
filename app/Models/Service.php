@@ -20,6 +20,7 @@ class Service extends Model
         'content',
         'icon',
         'image_path',
+        'content_image_path',
         'feature_list',
         'is_active',
         'sort_order',

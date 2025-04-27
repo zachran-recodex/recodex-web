@@ -20,6 +20,7 @@ class ServiceSeeder extends Seeder
                 'content' => '<p>Kami mengembangkan website dengan pendekatan modern, mengutamakan kecepatan, keamanan, dan desain user-centric. Mulai dari desain wireframe hingga deployment hosting.</p>',
                 'icon' => 'window',
                 'image_path' => null,
+                'content_image_path' => null,
                 'feature_list' => null,
                 'is_active' => true,
                 'sort_order' => 1
@@ -31,6 +32,7 @@ class ServiceSeeder extends Seeder
                 'content' => '<p>Kami melakukan riset kata kunci, optimasi on-page, technical SEO, dan backlink building untuk meningkatkan peringkat website Anda.</p>',
                 'icon' => 'cursor-arrow-rays',
                 'image_path' => null,
+                'content_image_path' => null,
                 'feature_list' => null,
                 'is_active' => true,
                 'sort_order' => 2
@@ -42,6 +44,7 @@ class ServiceSeeder extends Seeder
                 'content' => '<p>Kami membantu Anda memilih domain yang tepat, serta melakukan registrasi, perpanjangan, dan pengelolaan domain dengan mudah.</p>',
                 'icon' => 'bookmark-square',
                 'image_path' => null,
+                'content_image_path' => null,
                 'feature_list' => null,
                 'is_active' => true,
                 'sort_order' => 3
@@ -53,6 +56,7 @@ class ServiceSeeder extends Seeder
                 'content' => '<p>Kami menyediakan shared hosting, VPS, dan dedicated server dengan uptime 99.9% serta dukungan penuh 24/7.</p>',
                 'icon' => 'server-stack',
                 'image_path' => null,
+                'content_image_path' => null,
                 'feature_list' => null,
                 'is_active' => true,
                 'sort_order' => 4
@@ -64,6 +68,7 @@ class ServiceSeeder extends Seeder
                 'content' => '<p>Kami memberikan layanan update berkala, backup data, security monitoring, dan perbaikan teknis cepat untuk website Anda.</p>',
                 'icon' => 'wrench-screwdriver',
                 'image_path' => null,
+                'content_image_path' => null,
                 'feature_list' => null,
                 'is_active' => true,
                 'sort_order' => 5
@@ -75,6 +80,7 @@ class ServiceSeeder extends Seeder
                 'content' => '<p>Kami membantu bisnis Anda dalam memilih, mengembangkan, dan mengimplementasikan solusi IT yang efektif dan sesuai target bisnis.</p>',
                 'icon' => 'briefcase',
                 'image_path' => null,
+                'content_image_path' => null,
                 'feature_list' => null,
                 'is_active' => true,
                 'sort_order' => 6
@@ -84,26 +90,10 @@ class ServiceSeeder extends Seeder
                 'subtitle' => 'Pengalaman Digital yang Menarik',
                 'description' => 'Perancangan antarmuka (UI) dan pengalaman pengguna (UX) yang intuitif, modern, dan menarik, guna memastikan kenyamanan dan kemudahan bagi pengguna website maupun aplikasi.',
                 'content' => '<p>Dalam desain UI/UX, kami fokus pada riset pengguna, wireframing, prototyping, desain visual, usability testing, dan iterasi berkelanjutan untuk menciptakan pengalaman digital yang memuaskan.</p>',
-                'icon' => 'layout',
+                'icon' => 'photo',
                 'image_path' => null,
-                'feature_list' => json_encode([
-                    [
-                        'title' => 'User Interface (UI)',
-                        'points' => [
-                            'Desain visual yang menarik dan konsisten',
-                            'Layout, warna, tipografi, ikon, dan elemen grafis',
-                            'Memperkuat identitas brand'
-                        ]
-                    ],
-                    [
-                        'title' => 'User Experience (UX)',
-                        'points' => [
-                            'Riset pengguna dan peta perjalanan pengguna',
-                            'Wireframing, prototyping, dan usability testing',
-                            'Meningkatkan kenyamanan dan kepuasan pengguna'
-                        ]
-                    ]
-                ]),
+                'content_image_path' => null,
+                'feature_list' => null,
                 'is_active' => true,
                 'sort_order' => 7
             ],

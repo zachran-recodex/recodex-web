@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->string('icon')->nullable();
             $table->string('image_path')->nullable();
+            $table->string('content_image_path')->nullable();
             $table->json('feature_list')->nullable();
             $table->boolean('is_active')->default(true);
             $table->unsignedInteger('sort_order')->default(0);
