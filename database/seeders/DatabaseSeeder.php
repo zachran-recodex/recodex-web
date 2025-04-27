@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             ProjectSeeder::class,
             TestimonialSeeder::class,
             PricingSeeder::class,
+            MemberSeeder::class,
         ]);
     }
 }
