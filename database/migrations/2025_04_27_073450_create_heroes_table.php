@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('subtitle');
             $table->string('motto');
             $table->string('button_text');
-            $table->string('image_path');
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

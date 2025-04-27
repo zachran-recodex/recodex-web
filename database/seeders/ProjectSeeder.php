@@ -18,7 +18,7 @@ class ProjectSeeder extends Seeder
             'date' => '2024-06-16',
             'duration' => 'Two Months',
             'cost' => '50k USD',
-            'hero_image_path' => 'assets/img/images/th-1/project-details-hero-img.jpg',
+            'image_path' => 'assets/img/images/th-1/project-details-hero-img.jpg',
             'description' => 'The project began when a leading technology identified a market need for an innovative and energy-efficient smart home thermostat.',
             'steps' => [
                 [
