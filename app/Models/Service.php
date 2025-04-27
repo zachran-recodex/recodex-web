@@ -18,6 +18,7 @@ class Service extends Model
         'description',
         'icon',
         'image_path',
+        'is_active',
     ];
 
     /**

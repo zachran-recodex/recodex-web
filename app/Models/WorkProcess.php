@@ -13,6 +13,7 @@ class WorkProcess extends Model
      */
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'is_active',
     ];
 }
