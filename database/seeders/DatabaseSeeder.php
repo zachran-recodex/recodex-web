@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             WorkProcessSeeder::class,
             HeroSeeder::class,
             ProjectSeeder::class,
+            TestimonialSeeder::class,
         ]);
     }
 }
