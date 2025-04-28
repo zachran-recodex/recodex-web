@@ -22,7 +22,7 @@ Route::controller(MainController::class)->group(function () {
 
 });
 
-Route::view('dashboard', 'dashboard')
+Route::view('dashboard', 'dashboard.index')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
