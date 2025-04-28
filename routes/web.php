@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/members', App\Livewire\CMS\ManageMembers::class)->name('members');
         Route::get('/pricings', App\Livewire\CMS\ManagePricings::class)->name('pricings');
         Route::get('/projects', App\Livewire\CMS\ManageProjects::class)->name('projects');
+        Route::get('/work-processes', App\Livewire\CMS\ManageWorkProcesses::class)->name('work-processes');
     });
 });
 
