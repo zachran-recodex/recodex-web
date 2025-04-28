@@ -8,6 +8,8 @@ Route::controller(MainController::class)->group(function () {
 
     Route::get('/', 'index')->name('home');
 
+    Route::get('/tentang-kami', 'about')->name('about');
+
     Route::get('/layanan', 'service')->name('services');
 
     Route::get('/layanan/{service}', 'showService')->name('services.show');
