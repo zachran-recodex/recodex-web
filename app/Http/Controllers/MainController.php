@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Faq;
 use App\Models\Hero;
 use App\Models\Member;
 use App\Models\Project;
@@ -52,7 +53,15 @@ class MainController extends Controller
             ->orderBy('sort_order')
             ->get();
 
-        return view('main.service', compact('services'));
+        $works = WorkProcess::where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
+
+        $faqs = Faq::where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
+
+        return view('main.service', compact('services', 'works', 'faqs'));
     }
 
     public function showService(Service $service)

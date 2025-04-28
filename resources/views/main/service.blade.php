@@ -160,25 +160,18 @@
                     <!-- Process Area Left Block - Section Block -->
                     <div class="section-block text-center lg:text-start">
                         <h2 class="jos">
-                            Our
+                            Proses Kerja Unggulan Kami
                             <span>
-                                        high-quality
-                                        <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
-                                    </span>
-                            working processes
+                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                            </span>
                         </h2>
                         <div class="jos mt-6">
                             <p class="section-para">
-                                We focus at every stage on effective communication and
-                                collaboration between the client and ensuring that the
-                                final design meets the client's objectives and
-                                expectations.
+                                Kami fokus pada komunikasi efektif dan kolaborasi intensif dengan klien di setiap tahap, memastikan hasil akhir tidak hanya memenuhi, tetapi melampaui tujuan dan ekspektasi bisnis Anda.
                             </p>
 
                             <p class="section-para">
-                                It is important to note that these are simplified steps,
-                                and the actual work process may vary depending on the
-                                complexity of the project.
+                                Proses ini dapat disesuaikan dengan kompleksitas proyek, karena kami memahami setiap kebutuhan bisnis bersifat unik.
                             </p>
                         </div>
                     </div>
@@ -187,72 +180,51 @@
                     <!-- Process Area Right Block - Accordion -->
                     <!-- Accordion List -->
                     <ul class="jos flex flex-col gap-y-6">
-                        <!-- Accordion Item -->
-                        <li class="accordion-item-style-1 accordion-item active">
-                            <!-- Accordion Header -->
-                            <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
-                                <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
-                                    01/ Project idea
-                                </button>
-                                <div class="accordion-icon">
-                                    <img src="assets/img/icons/icon-black-arrow-less-down.svg" alt="icon-black-arrow-less-down" />
+                        @forelse($works as $index => $work)
+                            <!-- Accordion Item -->
+                            <li class="{{ $index === 0 ? 'accordion-item-style-1 accordion-item active' : 'accordion-item-style-1 accordion-item' }}">
+                                <!-- Accordion Header -->
+                                <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
+                                    <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
+                                        {{ $index + 1 }}/ {{ $work->title }}
+                                    </button>
+                                    <div class="accordion-icon">
+                                        <img src="{{ asset('assets/img/icons/icon-black-arrow-less-down.svg') }}" alt="icon-black-arrow-less-down" />
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Accordion Header -->
-                            <!-- Accordion Body -->
-                            <div class="accordion-body max-w-[826px] opacity-80">
-                                <p class="pt-5">
-                                    The process starts with a detailed discussion with the
-                                    client to understand their idea & goals.
-                                </p>
-                            </div>
-                            <!-- Accordion Body -->
-                        </li>
-                        <!-- Accordion Item -->
-                        <!-- Accordion Item -->
-                        <li class="accordion-item-style-1 accordion-item">
-                            <!-- Accordion Header -->
-                            <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
-                                <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
-                                    02/ Brainstorming
-                                </button>
-                                <div class="accordion-icon">
-                                    <img src="assets/img/icons/icon-black-arrow-less-down.svg" alt="icon-black-arrow-less-down" />
+                                <!-- Accordion Header -->
+                                <!-- Accordion Body -->
+                                <div class="accordion-body max-w-[826px] opacity-80">
+                                    <p class="pt-5">
+                                        {{ $work->description }}
+                                    </p>
                                 </div>
-                            </div>
-                            <!-- Accordion Header -->
-                            <!-- Accordion Body -->
-                            <div class="accordion-body max-w-[826px] opacity-80">
-                                <p class="pt-5">
-                                    The process starts with a detailed discussion with the
-                                    client to understand their idea & goals.
-                                </p>
-                            </div>
-                            <!-- Accordion Body -->
-                        </li>
-                        <!-- Accordion Item -->
-                        <!-- Accordion Item -->
-                        <li class="accordion-item-style-1 accordion-item">
-                            <!-- Accordion Header -->
-                            <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
-                                <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
-                                    03/ Launch
-                                </button>
-                                <div class="accordion-icon">
-                                    <img src="assets/img/icons/icon-black-arrow-less-down.svg" alt="icon-black-arrow-less-down" />
+                                <!-- Accordion Body -->
+                            </li>
+                            <!-- Accordion Item -->
+                        @empty
+                            <!-- Accordion Item -->
+                            <li class="accordion-item-style-1 accordion-item active">
+                                <!-- Accordion Header -->
+                                <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
+                                    <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
+                                        0/ No Data
+                                    </button>
+                                    <div class="accordion-icon">
+                                        <img src="{{ asset('assets/img/icons/icon-black-arrow-less-down.svg') }}" alt="icon-black-arrow-less-down" />
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Accordion Header -->
-                            <!-- Accordion Body -->
-                            <div class="accordion-body max-w-[826px] opacity-80">
-                                <p class="pt-5">
-                                    The process starts with a detailed discussion with the
-                                    client to understand their idea & goals.
-                                </p>
-                            </div>
-                            <!-- Accordion Body -->
-                        </li>
-                        <!-- Accordion Item -->
+                                <!-- Accordion Header -->
+                                <!-- Accordion Body -->
+                                <div class="accordion-body max-w-[826px] opacity-80">
+                                    <p class="pt-5">
+                                        No Data
+                                    </p>
+                                </div>
+                                <!-- Accordion Body -->
+                            </li>
+                            <!-- Accordion Item -->
+                        @endforelse
                     </ul>
                     <!-- Accordion List -->
                     <!-- Process Area Right Block - Accordion -->
@@ -274,11 +246,10 @@
                 <!-- Section Block -->
                 <div class="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
                     <h2 class="jos">
-                        These FAQs help
+                        Pertanyaan yang Sering Diajukan
                         <span>
-                                    <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
-                                </span>
-                        clients learn about us
+                            <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                        </span>
                     </h2>
                 </div>
                 <!-- Section Block -->
@@ -287,119 +258,47 @@
                 <div class="grid grid-cols-1 gap-x-6 gap-y-10 lg:grid-cols-2">
                     <!-- FAQ List -->
                     <ul class="flex flex-col gap-y-10">
-                        <!-- FAQ Item -->
-                        <li class="jos flex flex-col gap-y-4">
-                            <!-- FAQ Header Block -->
-                            <h4 class="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(../img/icons/icon-lightlime-question.svg)]">
-                                What services does agency offer?
-                            </h4>
-                            <!-- FAQ Header Block -->
-                            <!-- FAQ Body -->
-                            <div class="ml-10 text-[#0C0C0C]">
-                                <p>
-                                    Clients often seek to understand the range of design
-                                    services an agency provides, such as graphic design, web
-                                    design, branding.
-                                </p>
-                            </div>
-                            <!-- FAQ Body -->
-                        </li>
-                        <!-- FAQ Item -->
-                        <!-- FAQ Item -->
-                        <li class="jos flex flex-col gap-y-4">
-                            <!-- FAQ Header Block -->
-                            <h4 class="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(../img/icons/icon-lightlime-question.svg)]">
-                                What is your design process like?
-                            </h4>
-                            <!-- FAQ Header Block -->
-                            <!-- FAQ Body -->
-                            <div class="ml-10 text-[#0C0C0C]">
-                                <p>
-                                    Explaining the design agency's process from initial
-                                    concept to final delivery helps clients understand what
-                                    to expect.
-                                </p>
-                            </div>
-                            <!-- FAQ Body -->
-                        </li>
-                        <!-- FAQ Item -->
-                        <!-- FAQ Item -->
-                        <li class="jos flex flex-col gap-y-4">
-                            <!-- FAQ Header Block -->
-                            <h4 class="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(../img/icons/icon-lightlime-question.svg)]">
-                                How much does design work cost?
-                            </h4>
-                            <!-- FAQ Header Block -->
-                            <!-- FAQ Body -->
-                            <div class="ml-10 text-[#0C0C0C]">
-                                <p>
-                                    The cost of our design services varies depending on the
-                                    scope of the project. We provide customized quotes after
-                                    discussing requirements.
-                                </p>
-                            </div>
-                            <!-- FAQ Body -->
-                        </li>
-                        <!-- FAQ Item -->
+                        @foreach($faqs->take(5) as $faq)
+                            <!-- FAQ Item -->
+                            <li class="jos flex flex-col gap-y-4">
+                                <!-- FAQ Header Block -->
+                                <h4 class="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(../img/icons/icon-lightlime-question.svg)]">
+                                    {{ $faq->question }}
+                                </h4>
+                                <!-- FAQ Header Block -->
+                                <!-- FAQ Body -->
+                                <div class="ml-10 text-[#0C0C0C]">
+                                    <p>
+                                        {{ $faq->answer }}
+                                    </p>
+                                </div>
+                                <!-- FAQ Body -->
+                            </li>
+                            <!-- FAQ Item -->
+                        @endforeach
                     </ul>
                     <!-- FAQ List -->
 
                     <!-- FAQ List -->
                     <ul class="flex flex-col gap-y-10">
-                        <!-- FAQ Item -->
-                        <li class="jos flex flex-col gap-y-4">
-                            <!-- FAQ Header Block -->
-                            <h4 class="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(../img/icons/icon-lightlime-question.svg)]">
-                                What's your design process like?
-                            </h4>
-                            <!-- FAQ Header Block -->
-                            <!-- FAQ Body -->
-                            <div class="ml-10 text-[#0C0C0C]">
-                                <p>
-                                    Our design process typically involves discovery, concept
-                                    development, design, revisions based on feedback, and
-                                    finalization.
-                                </p>
-                            </div>
-                            <!-- FAQ Body -->
-                        </li>
-                        <!-- FAQ Item -->
-                        <!-- FAQ Item -->
-                        <li class="jos flex flex-col gap-y-4">
-                            <!-- FAQ Header Block -->
-                            <h4 class="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(../img/icons/icon-lightlime-question.svg)]">
-                                How do you handle user feedback?
-                            </h4>
-                            <!-- FAQ Header Block -->
-                            <!-- FAQ Body -->
-                            <div class="ml-10 text-[#0C0C0C]">
-                                <p>
-                                    We value client feedback and work closely with you to
-                                    make sure user happy with the final design. We offer a
-                                    specific number of revisions.
-                                </p>
-                            </div>
-                            <!-- FAQ Body -->
-                        </li>
-                        <!-- FAQ Item -->
-                        <!-- FAQ Item -->
-                        <li class="jos flex flex-col gap-y-4">
-                            <!-- FAQ Header Block -->
-                            <h4 class="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(../img/icons/icon-lightlime-question.svg)]">
-                                Can we see samples of your work?
-                            </h4>
-                            <!-- FAQ Header Block -->
-                            <!-- FAQ Body -->
-                            <div class="ml-10 text-[#0C0C0C]">
-                                <p>
-                                    Yes, we're proud to showcase a portfolio of our previous
-                                    projects. You can find examples of our work on our
-                                    website or view our portfolio.
-                                </p>
-                            </div>
-                            <!-- FAQ Body -->
-                        </li>
-                        <!-- FAQ Item -->
+                        @foreach($faqs->skip(5)->take(5) as $faq)
+                            <!-- FAQ Item -->
+                            <li class="jos flex flex-col gap-y-4">
+                                <!-- FAQ Header Block -->
+                                <h4 class="relative pl-10 before:absolute before:left-0 before:top-1 before:h-[30px] before:w-[30px] before:bg-[url(../img/icons/icon-lightlime-question.svg)]">
+                                    {{ $faq->question }}
+                                </h4>
+                                <!-- FAQ Header Block -->
+                                <!-- FAQ Body -->
+                                <div class="ml-10 text-[#0C0C0C]">
+                                    <p>
+                                        {{ $faq->answer }}
+                                    </p>
+                                </div>
+                                <!-- FAQ Body -->
+                            </li>
+                            <!-- FAQ Item -->
+                        @endforeach
                     </ul>
                     <!-- FAQ List -->
                 </div>
