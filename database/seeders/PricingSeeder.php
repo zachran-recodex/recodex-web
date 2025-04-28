@@ -18,8 +18,8 @@ class PricingSeeder extends Seeder
                 'description' => 'Web design packages offered a range of services and features to create websites.',
                 'monthly_price' => 299,
                 'quarterly_price' => 850,
-                'semiannual_price' => 1600,
-                'yearly_price' => 3200,
+                'semi_annually_price' => 1600,
+                'annually_price' => 3200,
                 'features' => [
                     'Consultation & Discovery',
                     'Responsive Design',
@@ -35,8 +35,8 @@ class PricingSeeder extends Seeder
                 'description' => 'UX/UI package offered a set of services aimed at designing user-friendly UI/UX.',
                 'monthly_price' => 499,
                 'quarterly_price' => 1450,
-                'semiannual_price' => 2800,
-                'yearly_price' => 5000,
+                'semi_annually_price' => 2800,
+                'annually_price' => 5000,
                 'features' => [
                     'Information Architecture',
                     'Wireframing & Prototyping',
@@ -52,8 +52,8 @@ class PricingSeeder extends Seeder
                 'description' => 'Branding package typically includes a comprehensive set of brand\'s identity.',
                 'monthly_price' => 299,
                 'quarterly_price' => 850,
-                'semiannual_price' => 1600,
-                'yearly_price' => 3200,
+                'semi_annually_price' => 1600,
+                'annually_price' => 3200,
                 'features' => [
                     'Brand Guidelines',
                     'Stationery & Website Design',
