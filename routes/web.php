@@ -20,6 +20,18 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
     Volt::route('settings/password', 'settings.password')->name('settings.password');
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
+
+    // CMS Routes
+    Route::prefix('cms')->name('cms.')->group(function () {
+        Route::get('/faqs', App\Livewire\CMS\ManageFaqs::class)->name('faqs');
+        Route::get('/services', App\Livewire\CMS\ManageServices::class)->name('services');
+        Route::get('/members', App\Livewire\CMS\ManageMembers::class)->name('members');
+        Route::get('/pricings', App\Livewire\CMS\ManagePricings::class)->name('pricings');
+        Route::get('/projects', App\Livewire\CMS\ManageProjects::class)->name('projects');
+        Route::get('/work-processes', App\Livewire\CMS\ManageWorkProcesses::class)->name('work-processes');
+        Route::get('/about', App\Livewire\CMS\ManageAbout::class)->name('about');
+        Route::get('/hero', App\Livewire\CMS\ManageHero::class)->name('hero');
+    });
 });
 
 require __DIR__.'/auth.php';
