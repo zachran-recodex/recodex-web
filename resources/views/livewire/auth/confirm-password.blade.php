@@ -22,7 +22,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             'password' => $this->password,
         ])) {
             throw ValidationException::withMessages([
-                'password' => __('auth.password'),
+                'password' => 'auth.password',
             ]);
         }
 
@@ -49,7 +49,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             type="password"
             required
             autocomplete="new-password"
-            :placeholder="Password"
+            placeholder="Password"
         />
 
         <flux:button variant="primary" type="submit" class="w-full">Confirm</flux:button>
