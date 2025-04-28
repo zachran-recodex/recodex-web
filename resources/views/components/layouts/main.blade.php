@@ -54,37 +54,16 @@
                                     </div>
                                     <ul class="site-menu-main">
                                         <li class="nav-item nav-item-has-children">
-                                            <a href="#" class="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">Demo
+                                            <a href="{{ route('services') }}" class="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
+                                                Layanan
                                                 <img src="{{ asset('assets/img/icons/icon-caret-down.svg') }}" alt="icon-caret-down" width="7" height="4" class="-rotate-90 invert-0 lg:rotate-0 lg:invert" />
                                             </a>
                                             <ul class="sub-menu" id="submenu-0">
-                                                <li class="sub-menu--item">
-                                                    <a href="index.html">Design Agency</a>
-                                                </li>
-                                                <li class="sub-menu--item">
-                                                    <a href="index-2.html">Startup Agency</a>
-                                                </li>
-                                                <li class="sub-menu--item">
-                                                    <a href="index-3.html">SEO Agency</a>
-                                                </li>
-                                                <li class="sub-menu--item">
-                                                    <a href="index-4.html">Business Consultation</a>
-                                                </li>
-                                                <li class="sub-menu--item">
-                                                    <a href="index-5.html">Digital Marketing</a>
-                                                </li>
-                                                <li class="sub-menu--item">
-                                                    <a href="index-6.html">Interior Design Agency</a>
-                                                </li>
-                                                <li class="sub-menu--item">
-                                                    <a href="index-7.html">Advertising Agency</a>
-                                                </li>
-                                                <li class="sub-menu--item">
-                                                    <a href="index-8.html">IT Agency</a>
-                                                </li>
-                                                <li class="sub-menu--item">
-                                                    <a href="index-9.html">Social Marketing Agency</a>
-                                                </li>
+                                                @foreach($navServices as $service)
+                                                    <li class="sub-menu--item">
+                                                        <a href="{{ route('services.show', $service->slug) }}">{{ $service->title }}</a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li class="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
@@ -92,12 +71,12 @@
                                         </li>
                                         <li class="nav-item nav-item-has-children">
                                             <a href="#" class="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">Pages
-                                                <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" class="-rotate-90 invert-0 lg:rotate-0 lg:invert" />
+                                                <img src="{{ asset('assets/img/icons/icon-caret-down.svg') }}" alt="icon-caret-down" width="7" height="4" class="-rotate-90 invert-0 lg:rotate-0 lg:invert" />
                                             </a>
                                             <ul class="sub-menu" id="submenu-1">
                                                 <li class="sub-menu--item nav-item-has-children">
                                                     <a href="#" data-menu-get="h3" class="drop-trigger">Services
-                                                        <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" class="-rotate-90" />
+                                                        <img src="{{ asset('assets/img/icons/icon-caret-down.svg') }}" alt="icon-caret-down" width="7" height="4" class="-rotate-90" />
                                                     </a>
                                                     <ul class="sub-menu shape-none" id="submenu-2">
                                                         <li class="sub-menu--item">
@@ -110,7 +89,7 @@
                                                 </li>
                                                 <li class="sub-menu--item nav-item-has-children">
                                                     <a href="#" data-menu-get="h3" class="drop-trigger">Projects
-                                                        <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" class="-rotate-90" />
+                                                        <img src="{{ asset('assets/img/icons/icon-caret-down.svg') }}" alt="icon-caret-down" width="7" height="4" class="-rotate-90" />
                                                     </a>
                                                     <ul class="sub-menu shape-none" id="submenu-3">
                                                         <li class="sub-menu--item">
@@ -126,7 +105,7 @@
                                                 </li>
                                                 <li class="sub-menu--item nav-item-has-children">
                                                     <a href="#" data-menu-get="h3" class="drop-trigger">Team
-                                                        <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" class="-rotate-90" height="4" />
+                                                        <img src="{{ asset('assets/img/icons/icon-caret-down.svg') }}" alt="icon-caret-down" width="7" class="-rotate-90" height="4" />
                                                     </a>
                                                     <ul class="sub-menu shape-none" id="submenu-4">
                                                         <li class="sub-menu--item">
@@ -139,7 +118,7 @@
                                                 </li>
                                                 <li class="sub-menu--item nav-item-has-children">
                                                     <a href="#" data-menu-get="h3" class="drop-trigger">Utility
-                                                        <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" class="-rotate-90" />
+                                                        <img src="{{ asset('assets/img/icons/icon-caret-down.svg') }}" alt="icon-caret-down" width="7" height="4" class="-rotate-90" />
                                                     </a>
                                                     <ul class="sub-menu shape-none" id="submenu-5">
                                                         <li class="sub-menu--item">
@@ -152,7 +131,7 @@
                                                 </li>
                                                 <li class="sub-menu--item nav-item-has-children">
                                                     <a href="#" data-menu-get="h3" class="drop-trigger">Authentication
-                                                        <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" class="-rotate-90" height="4" />
+                                                        <img src="{{ asset('assets/img/icons/icon-caret-down.svg') }}" alt="icon-caret-down" width="7" class="-rotate-90" height="4" />
                                                     </a>
                                                     <ul class="sub-menu shape-none" id="submenu-6">
                                                         <li class="sub-menu--item">
@@ -182,7 +161,7 @@
                                         </li>
                                         <li class="nav-item nav-item-has-children">
                                             <a href="#" class="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">Blog
-                                                <img src="assets/img/icons/icon-caret-down.svg" alt="icon-caret-down" width="7" height="4" class="-rotate-90 invert-0 lg:rotate-0 lg:invert" />
+                                                <img src="{{ asset('assets/img/icons/icon-caret-down.svg') }}" alt="icon-caret-down" width="7" height="4" class="-rotate-90 invert-0 lg:rotate-0 lg:invert" />
                                             </a>
                                             <ul class="sub-menu" id="submenu-7">
                                                 <li class="sub-menu--item">
@@ -366,13 +345,13 @@
         </div>
 
         <!--Vendor js-->
-        <script src="assets/js/vendors/counterup.js" type="module"></script>
-        <script src="assets/js/vendors/swiper-bundle.min.js"></script>
-        <script src="assets/js/vendors/fslightbox.js"></script>
-        <script src="assets/js/vendors/jos.min.js"></script>
-        <script src="assets/js/vendors/menu.js"></script>
+        <script src="{{ asset('assets/js/vendors/counterup.js') }}" type="module"></script>
+        <script src="{{ asset('assets/js/vendors/swiper-bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendors/fslightbox.js') }}"></script>
+        <script src="{{ asset('assets/js/vendors/jos.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendors/menu.js') }}"></script>
 
         <!-- Main js -->
-        <script src="assets/js/main.js"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
     </body>
 </html>
