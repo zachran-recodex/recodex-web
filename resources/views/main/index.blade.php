@@ -66,9 +66,9 @@
                     <!-- Section Block -->
                     <div class="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
                         <h2 class="jos">
-                            We provide effective design solutions
+                            Layanan Profesional Jasa Pembuatan Website
                             <span>
-                                <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px] animate-spin animate-infinite" />
                             </span>
                         </h2>
                     </div>
@@ -76,74 +76,27 @@
 
                     <!-- Service List -->
                     <ul class="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
-                        <!-- Service Item -->
-                        <li class="jos group/team-item" data-jos_delay="0">
-                            <div class="shadow-bg group h-full">
-                                <div class="flex h-full flex-col items-start overflow-hidden rounded-[20px] border-2 border-black bg-colorIvory p-[30px] transition duration-300 group-hover:bg-colorLightLime">
-                                    <img src="assets/img/icons/th-1-service-icon-1.svg" alt="th-1-service-icon-1" width="64" height="70" class="h-[70px] w-auto" />
-
-                                    <h4 class="mb-[15px] mt-[30px]">UI/UX Design</h4>
-                                    <p class="mb-7">
-                                        Focusing on user interface (UI) and user experience
-                                        (UX) design to enhance the usability and accessibility
-                                        of digital products & app.
-                                    </p>
-                                    <a href="service-details.html" class="mt-auto inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-5"><img src="assets/img/icons/icon-black-arrow-right.svg" alt="icon-black-arrow-right" width="34" height="28" /></a>
+                        @forelse($services as $index => $service)
+                            <!-- Service Item -->
+                            <li class="{{ $index === 0 ? 'jos group/team-item' : 'jos' }}" data-jos_delay="{{ number_format($index * 0.3, 1) }}">
+                                <div class="shadow-bg group h-full">
+                                    <div class="flex h-full flex-col items-start overflow-hidden rounded-[20px] border-2 border-black bg-colorIvory p-[30px] transition duration-300 group-hover:bg-colorLightLime">
+                                        <flux:icon name="{{ $service->icon }}" width="64" height="70" class="h-[70px]! w-auto!" />
+                                        <h4 class="mb-[15px] mt-[30px]">{{ $service->title }}</h4>
+                                        <p class="mb-7">
+                                            {{ $service->description }}
+                                        </p>
+                                        <a href="{{ route('services.show', $service->slug) }}" class="mt-auto inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-5">
+                                            <img src="{{ asset('assets/img/icons/icon-black-arrow-right.svg') }}" alt="icon-black-arrow-right" width="34" height="28" />
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <!-- Service Item -->
-                        <!-- Service Item -->
-                        <li class="jos" data-jos_delay="0.3">
-                            <div class="shadow-bg group h-full">
-                                <div class="flex h-full flex-col items-start overflow-hidden rounded-[20px] border-2 border-black bg-colorIvory p-[30px] transition duration-300 group-hover:bg-colorLightLime">
-                                    <img src="assets/img/icons/th-1-service-icon-2.svg" alt="th-1-service-icon-2" width="77" height="70" class="h-[70px] w-auto" />
-
-                                    <h4 class="mb-[15px] mt-[30px]">Graphic Design</h4>
-                                    <p class="mb-7">
-                                        Creating visual elements such as logos, branding
-                                        materials, page layout techniques, brochures, & other
-                                        marketing collateral.
-                                    </p>
-                                    <a href="service-details.html" class="mt-auto inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-5"><img src="assets/img/icons/icon-black-arrow-right.svg" alt="icon-black-arrow-right" width="34" height="28" /></a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- Service Item -->
-                        <!-- Service Item -->
-                        <li class="jos" data-jos_delay="0.6">
-                            <div class="shadow-bg group h-full">
-                                <div class="flex h-full flex-col items-start overflow-hidden rounded-[20px] border-2 border-black bg-colorIvory p-[30px] transition duration-300 group-hover:bg-colorLightLime">
-                                    <img src="assets/img/icons/th-1-service-icon-3.svg" alt="th-1-service-icon-3" width="75" height="70" class="h-[70px] w-auto" />
-
-                                    <h4 class="mb-[15px] mt-[30px]">Web Design</h4>
-                                    <p class="mb-7">
-                                        Designing and developing websites to ensure they are
-                                        visually look and appealing, user-friendly, and
-                                        functional your website.
-                                    </p>
-                                    <a href="service-details.html" class="mt-auto inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-5"><img src="assets/img/icons/icon-black-arrow-right.svg" alt="icon-black-arrow-right" width="34" height="28" /></a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- Service Item -->
-                        <!-- Service Item -->
-                        <li class="jos" data-jos_delay="0.9">
-                            <div class="shadow-bg group h-full">
-                                <div class="flex h-full flex-col items-start overflow-hidden rounded-[20px] border-2 border-black bg-colorIvory p-[30px] transition duration-300 group-hover:bg-colorLightLime">
-                                    <img src="assets/img/icons/th-1-service-icon-4.svg" alt="th-1-service-icon-4" width="55" height="70" class="h-[70px] w-auto" />
-
-                                    <h4 class="mb-[15px] mt-[30px]">Motion Graphics</h4>
-                                    <p class="mb-7">
-                                        Creating animated graphics, videos for various
-                                        purposes, including marketing and entertainment. To
-                                        help sell a product or service.
-                                    </p>
-                                    <a href="service-details.html" class="mt-auto inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-5"><img src="assets/img/icons/icon-black-arrow-right.svg" alt="icon-black-arrow-right" width="34" height="28" /></a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- Service Item -->
+                            </li>
+                        @empty
+                            <li class="col-span-2 text-center py-10">
+                                <p>No services available at the moment.</p>
+                            </li>
+                        @endforelse
                     </ul>
                     <!-- Service List -->
                 </div>
