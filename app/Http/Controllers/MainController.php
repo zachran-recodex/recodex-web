@@ -22,9 +22,11 @@ class MainController extends Controller
             ->orderBy('sort_order')
             ->get();
 
-        $workProcesses = WorkProcess::all();
+        $works = WorkProcess::where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
 
-        return view('main.index', compact('hero', 'services', 'projects', 'workProcesses'));
+        return view('main.index', compact('hero', 'services', 'projects', 'works'));
     }
 
     public function about()

@@ -270,25 +270,18 @@
                     <!-- Process Area Left Block - Section Block -->
                     <div class="section-block text-center lg:text-start">
                         <h2 class="jos">
-                            Our
+                            Proses Kerja Unggulan Kami
                             <span>
-                                            high-quality
-                                            <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
-                                        </span>
-                            working processes
+                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                            </span>
                         </h2>
                         <div class="jos mt-6">
                             <p class="section-para">
-                                We focus at every stage on effective communication and
-                                collaboration between the client and ensuring that the
-                                final design meets the client's objectives and
-                                expectations.
+                                Kami fokus pada komunikasi efektif dan kolaborasi intensif dengan klien di setiap tahap, memastikan hasil akhir tidak hanya memenuhi, tetapi melampaui tujuan dan ekspektasi bisnis Anda.
                             </p>
 
                             <p class="section-para">
-                                It is important to note that these are simplified steps,
-                                and the actual work process may vary depending on the
-                                complexity of the project.
+                                Proses ini dapat disesuaikan dengan kompleksitas proyek, karena kami memahami setiap kebutuhan bisnis bersifat unik.
                             </p>
                         </div>
                     </div>
@@ -297,72 +290,51 @@
                     <!-- Process Area Right Block - Accordion -->
                     <!-- Accordion List -->
                     <ul class="jos flex flex-col gap-y-6">
-                        <!-- Accordion Item -->
-                        <li class="accordion-item-style-1 accordion-item active">
-                            <!-- Accordion Header -->
-                            <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
-                                <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
-                                    01/ Project idea
-                                </button>
-                                <div class="accordion-icon">
-                                    <img src="assets/img/icons/icon-black-arrow-less-down.svg" alt="icon-black-arrow-less-down" />
+                        @forelse($works as $index => $work)
+                            <!-- Accordion Item -->
+                            <li class="{{ $index === 0 ? 'accordion-item-style-1 accordion-item active' : 'accordion-item-style-1 accordion-item' }}">
+                                <!-- Accordion Header -->
+                                <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
+                                    <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
+                                        {{ $index + 1 }}/ {{ $work->title }}
+                                    </button>
+                                    <div class="accordion-icon">
+                                        <img src="{{ asset('assets/img/icons/icon-black-arrow-less-down.svg') }}" alt="icon-black-arrow-less-down" />
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Accordion Header -->
-                            <!-- Accordion Body -->
-                            <div class="accordion-body max-w-[826px] opacity-80">
-                                <p class="pt-5">
-                                    The process starts with a detailed discussion with the
-                                    client to understand their idea & goals.
-                                </p>
-                            </div>
-                            <!-- Accordion Body -->
-                        </li>
-                        <!-- Accordion Item -->
-                        <!-- Accordion Item -->
-                        <li class="accordion-item-style-1 accordion-item">
-                            <!-- Accordion Header -->
-                            <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
-                                <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
-                                    02/ Brainstorming
-                                </button>
-                                <div class="accordion-icon">
-                                    <img src="assets/img/icons/icon-black-arrow-less-down.svg" alt="icon-black-arrow-less-down" />
+                                <!-- Accordion Header -->
+                                <!-- Accordion Body -->
+                                <div class="accordion-body max-w-[826px] opacity-80">
+                                    <p class="pt-5">
+                                        {{ $work->description }}
+                                    </p>
                                 </div>
-                            </div>
-                            <!-- Accordion Header -->
-                            <!-- Accordion Body -->
-                            <div class="accordion-body max-w-[826px] opacity-80">
-                                <p class="pt-5">
-                                    The process starts with a detailed discussion with the
-                                    client to understand their idea & goals.
-                                </p>
-                            </div>
-                            <!-- Accordion Body -->
-                        </li>
-                        <!-- Accordion Item -->
-                        <!-- Accordion Item -->
-                        <li class="accordion-item-style-1 accordion-item">
-                            <!-- Accordion Header -->
-                            <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
-                                <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
-                                    03/ Launch
-                                </button>
-                                <div class="accordion-icon">
-                                    <img src="assets/img/icons/icon-black-arrow-less-down.svg" alt="icon-black-arrow-less-down" />
+                                <!-- Accordion Body -->
+                            </li>
+                            <!-- Accordion Item -->
+                        @empty
+                            <!-- Accordion Item -->
+                            <li class="accordion-item-style-1 accordion-item active">
+                                <!-- Accordion Header -->
+                                <div class="accordion-header text-ColorBlack flex items-center justify-between gap-6 text-xl font-semibold">
+                                    <button class="flex-1 text-left font-syne text-2xl font-bold leading-[1.4] md:text-3xl">
+                                        0/ No Data
+                                    </button>
+                                    <div class="accordion-icon">
+                                        <img src="{{ asset('assets/img/icons/icon-black-arrow-less-down.svg') }}" alt="icon-black-arrow-less-down" />
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Accordion Header -->
-                            <!-- Accordion Body -->
-                            <div class="accordion-body max-w-[826px] opacity-80">
-                                <p class="pt-5">
-                                    The process starts with a detailed discussion with the
-                                    client to understand their idea & goals.
-                                </p>
-                            </div>
-                            <!-- Accordion Body -->
-                        </li>
-                        <!-- Accordion Item -->
+                                <!-- Accordion Header -->
+                                <!-- Accordion Body -->
+                                <div class="accordion-body max-w-[826px] opacity-80">
+                                    <p class="pt-5">
+                                        No Data
+                                    </p>
+                                </div>
+                                <!-- Accordion Body -->
+                            </li>
+                            <!-- Accordion Item -->
+                        @endforelse
                     </ul>
                     <!-- Accordion List -->
                     <!-- Process Area Right Block - Accordion -->
@@ -379,158 +351,160 @@
     <div class="horizontal-line bg-[#e6e6e6]"></div>
     <!-- Horizontal Line -->
 
-    <!-- ...::: Testimonial Section Start :::... -->
-    <section class="section-testimonial">
-        <!-- Section Space -->
-        <div class="section-space">
-            <!-- Section Container -->
-            <div class="container">
-                <!-- Section Block -->
-                <div class="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
-                    <h2 class="jos">
-                        Clients are always satisfied with
-                        <span>
-                                        us
-                                        <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
-                                    </span>
-                    </h2>
+    @if(false)
+        <!-- ...::: Testimonial Section Start :::... -->
+        <section class="section-testimonial">
+            <!-- Section Space -->
+            <div class="section-space">
+                <!-- Section Container -->
+                <div class="container">
+                    <!-- Section Block -->
+                    <div class="section-block mx-auto mb-10 max-w-[650px] text-center md:mb-[60px] xl:mb-20 xl:max-w-[856px]">
+                        <h2 class="jos">
+                            Clients are always satisfied with
+                            <span>
+                                            us
+                                            <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                                        </span>
+                        </h2>
+                    </div>
+                    <!-- Section Block -->
+
+                    <!-- Testimonial List -->
+                    <ul class="grid grid-cols-1 gap-x-6 gap-y-[30px] md:grid-cols-2">
+                        <!-- Testimonial Item -->
+                        <li class="jos" data-jos_delay="0">
+                            <div class="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
+                                <div class="mb-8 flex gap-x-2">
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                </div>
+                                <h4 class="mb-5">Super customer service!</h4>
+                                <p class="mb-[30px]">
+                                    Excellent customer service and I was really impressed and
+                                    happy with my purchase especially as it was a last minute
+                                    order which got to me in time, and when it arrived I was
+                                    very happy with the design and size and so was the
+                                    recipient.
+                                </p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
+                                        <img src="assets/img/images/th-1/testimonial-user-img-1.png" alt="testimonial-user-img-1" width="64" height="64" class="h-full w-full object-cover" />
+                                    </div>
+
+                                    <div class="flex-1 font-syne text-lg font-bold leading-none -tracking-[0.5px] lg:text-[21px]">
+                                        William Jack
+                                        <span class="font-normal">Founder@XYZ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Testimonial Item -->
+                        <!-- Testimonial Item -->
+                        <li class="jos" data-jos_delay="0.3">
+                            <div class="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
+                                <div class="mb-8 flex gap-x-2">
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                </div>
+                                <h4 class="mb-5">Exceptional creativity and vision</h4>
+                                <p class="mb-[30px]">
+                                    Working with Mthemeus was a game-changer for our brand.
+                                    Their exceptional creativity & vision breathed new life
+                                    into our visual. The logo they designed perfectly captures
+                                    our essence & has become instantly recognizable. We
+                                    couldn't be happier with the results!
+                                </p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
+                                        <img src="assets/img/images/th-1/testimonial-user-img-2.png" alt="testimonial-user-img-2" width="64" height="64" class="h-full w-full object-cover" />
+                                    </div>
+
+                                    <div class="flex-1 font-syne text-lg font-bold leading-none -tracking-[0.5px] lg:text-[21px]">
+                                        Smith Align
+                                        <span class="font-normal">Businessman</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Testimonial Item -->
+                        <!-- Testimonial Item -->
+                        <li class="jos" data-jos_delay="0.6">
+                            <div class="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
+                                <div class="mb-8 flex gap-x-2">
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                </div>
+                                <h4 class="mb-5">Innovative and professional</h4>
+                                <p class="mb-[30px]">
+                                    I can't say enough good things about them. Their team is
+                                    not only incredibly talented but also highly professional.
+                                    They listened to our ideas and brought them to life in
+                                    ways we couldn't have imagined. Their innovative approach
+                                    and dedication to our project.
+                                </p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
+                                        <img src="assets/img/images/th-1/testimonial-user-img-3.png" alt="testimonial-user-img-3" width="64" height="64" class="h-full w-full object-cover" />
+                                    </div>
+
+                                    <div class="text- leading-nonelg flex-1 font-syne font-bold -tracking-[0.5px] lg:text-[21px]">
+                                        Milano Joe
+                                        <span class="font-normal">Creative Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Testimonial Item -->
+                        <!-- Testimonial Item -->
+                        <li class="jos" data-jos_delay="0.9">
+                            <div class="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
+                                <div class="mb-8 flex gap-x-2">
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                    <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
+                                </div>
+                                <h4 class="mb-5">Transformed our brand</h4>
+                                <p class="mb-[30px]">
+                                    Our partnership with Mthemeus transformed our brand from
+                                    ordinary to extraordinary. Their branding expertise and
+                                    meticulous design work elevated our marketing materials to
+                                    a whole new level. Our customers have taken notice, and
+                                    boost in brand recognition.
+                                </p>
+                                <div class="mt-auto flex items-center gap-3">
+                                    <div class="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
+                                        <img src="assets/img/images/th-1/testimonial-user-img-4.png" alt="testimonial-user-img-4" width="64" height="64" class="h-full w-full object-cover" />
+                                    </div>
+
+                                    <div class="flex-1 font-syne text-lg font-bold leading-none -tracking-[0.5px] lg:text-[21px]">
+                                        Danial Mark
+                                        <span class="font-normal">Marketing Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Testimonial Item -->
+                    </ul>
+                    <!-- Testimonial List -->
                 </div>
-                <!-- Section Block -->
-
-                <!-- Testimonial List -->
-                <ul class="grid grid-cols-1 gap-x-6 gap-y-[30px] md:grid-cols-2">
-                    <!-- Testimonial Item -->
-                    <li class="jos" data-jos_delay="0">
-                        <div class="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
-                            <div class="mb-8 flex gap-x-2">
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                            </div>
-                            <h4 class="mb-5">Super customer service!</h4>
-                            <p class="mb-[30px]">
-                                Excellent customer service and I was really impressed and
-                                happy with my purchase especially as it was a last minute
-                                order which got to me in time, and when it arrived I was
-                                very happy with the design and size and so was the
-                                recipient.
-                            </p>
-                            <div class="mt-auto flex items-center gap-3">
-                                <div class="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
-                                    <img src="assets/img/images/th-1/testimonial-user-img-1.png" alt="testimonial-user-img-1" width="64" height="64" class="h-full w-full object-cover" />
-                                </div>
-
-                                <div class="flex-1 font-syne text-lg font-bold leading-none -tracking-[0.5px] lg:text-[21px]">
-                                    William Jack
-                                    <span class="font-normal">Founder@XYZ</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Testimonial Item -->
-                    <!-- Testimonial Item -->
-                    <li class="jos" data-jos_delay="0.3">
-                        <div class="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
-                            <div class="mb-8 flex gap-x-2">
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                            </div>
-                            <h4 class="mb-5">Exceptional creativity and vision</h4>
-                            <p class="mb-[30px]">
-                                Working with Mthemeus was a game-changer for our brand.
-                                Their exceptional creativity & vision breathed new life
-                                into our visual. The logo they designed perfectly captures
-                                our essence & has become instantly recognizable. We
-                                couldn't be happier with the results!
-                            </p>
-                            <div class="mt-auto flex items-center gap-3">
-                                <div class="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
-                                    <img src="assets/img/images/th-1/testimonial-user-img-2.png" alt="testimonial-user-img-2" width="64" height="64" class="h-full w-full object-cover" />
-                                </div>
-
-                                <div class="flex-1 font-syne text-lg font-bold leading-none -tracking-[0.5px] lg:text-[21px]">
-                                    Smith Align
-                                    <span class="font-normal">Businessman</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Testimonial Item -->
-                    <!-- Testimonial Item -->
-                    <li class="jos" data-jos_delay="0.6">
-                        <div class="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
-                            <div class="mb-8 flex gap-x-2">
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                            </div>
-                            <h4 class="mb-5">Innovative and professional</h4>
-                            <p class="mb-[30px]">
-                                I can't say enough good things about them. Their team is
-                                not only incredibly talented but also highly professional.
-                                They listened to our ideas and brought them to life in
-                                ways we couldn't have imagined. Their innovative approach
-                                and dedication to our project.
-                            </p>
-                            <div class="mt-auto flex items-center gap-3">
-                                <div class="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
-                                    <img src="assets/img/images/th-1/testimonial-user-img-3.png" alt="testimonial-user-img-3" width="64" height="64" class="h-full w-full object-cover" />
-                                </div>
-
-                                <div class="text- leading-nonelg flex-1 font-syne font-bold -tracking-[0.5px] lg:text-[21px]">
-                                    Milano Joe
-                                    <span class="font-normal">Creative Director</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Testimonial Item -->
-                    <!-- Testimonial Item -->
-                    <li class="jos" data-jos_delay="0.9">
-                        <div class="flex h-full flex-col rounded-[20px] border-2 border-black px-[30px] py-6 transition-all duration-300 hover:shadow-[5px_5px_0_0] hover:shadow-black">
-                            <div class="mb-8 flex gap-x-2">
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                                <img src="assets/img/icons/icon-black-star.svg" alt="icon-black-star" width="37" height="35" />
-                            </div>
-                            <h4 class="mb-5">Transformed our brand</h4>
-                            <p class="mb-[30px]">
-                                Our partnership with Mthemeus transformed our brand from
-                                ordinary to extraordinary. Their branding expertise and
-                                meticulous design work elevated our marketing materials to
-                                a whole new level. Our customers have taken notice, and
-                                boost in brand recognition.
-                            </p>
-                            <div class="mt-auto flex items-center gap-3">
-                                <div class="h-[70px] w-[70px] overflow-hidden rounded-[50%] border-2 border-black">
-                                    <img src="assets/img/images/th-1/testimonial-user-img-4.png" alt="testimonial-user-img-4" width="64" height="64" class="h-full w-full object-cover" />
-                                </div>
-
-                                <div class="flex-1 font-syne text-lg font-bold leading-none -tracking-[0.5px] lg:text-[21px]">
-                                    Danial Mark
-                                    <span class="font-normal">Marketing Director</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Testimonial Item -->
-                </ul>
-                <!-- Testimonial List -->
+                <!-- Section Container -->
             </div>
-            <!-- Section Container -->
-        </div>
-        <!-- Section Space -->
-    </section>
-    <!-- ...::: Testimonial Section End :::... -->
+            <!-- Section Space -->
+        </section>
+        <!-- ...::: Testimonial Section End :::... -->
+    @endif
 
     <!-- ...::: Text Slider Section Start :::... -->
     <div class="section-text-slider">
