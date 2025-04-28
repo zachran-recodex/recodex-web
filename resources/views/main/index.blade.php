@@ -29,7 +29,7 @@
                                 <span class="text-base font-semibold">{{ $hero->motto }}</span>
                             </div>
 
-                            <a href="contact.html" class="btn-primary relative pr-20 md:pr-[118px]">
+                            <a href="#" class="btn-primary relative pr-20 md:pr-[118px]">
                                 {{ $hero->button_text }}
                                 <span class="absolute right-[5px] inline-flex h-[50px] w-[50px] items-center justify-center rounded-[50%] bg-black">
                                     <img src="{{ asset('assets/img/icons/icon-buttery-white-phone.svg') }}" alt="icon-buttery-white-phone" width="30" height="30" />
@@ -123,17 +123,14 @@
                 <div class="section-block mb-10 md:mb-[60px] xl:mb-20">
                     <div class="grid items-center gap-x-6 gap-y-10 text-center lg:grid-cols-[1fr_minmax(0,0.55fr)] lg:text-start xl:gap-x-[134px]">
                         <h2 class="jos">
-                            We make
+                            Buat Bisnis Anda
                             <span>
-                                            your
-                                            <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
-                                        </span>
-                            business stand out
+                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                            </span>
+                            Makin Menarik!
                         </h2>
                         <p class="jos section-para">
-                            We work closely with our clients to know their objectives,
-                            target audience, unique needs, and practical design
-                            solutions.
+                            Kami berkolaborasi penuh dengan Anda untuk memahami tujuan bisnis, audiens target, dan kebutuhan unik—lalu menciptakan website yang tidak hanya menarik, tapi juga mendongkrak performa bisnis.
                         </p>
                     </div>
                 </div>
@@ -143,12 +140,14 @@
                 <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-[0.8fr_0.4fr]">
                     <!-- About Left Block - Video -->
                     <div class="jos relative flex items-center justify-center overflow-hidden rounded-[25px] border-[5px] border-black">
-                        <img src="assets/img/images/th-1/about-img.jpg" alt="about-img" width="846" height="476" loading="lazy" class="h-full w-full object-cover" />
+                        <img src="{{ asset('assets/img/images/th-1/about-img.jpg') }}" alt="about-img" width="846" height="476" loading="lazy" class="h-full w-full object-cover" />
 
                         <div class="absolute inline-block">
                             <a data-fslightbox="gallery" href="https://www.youtube.com/watch?v=3nQNiWdeH2Q" class="btn-primary relative pr-16" aria-label="video-play">
                                 Play
-                                <span class="rounded-[50% absolute right-[0px] inline-flex items-center justify-center"><img src="assets/img/icons/icon-buttery-white-black-play.svg" alt="icon-buttery-white-black-play" width="50" height="50" /></span>
+                                <span class="rounded-[50% absolute right-[0px] inline-flex items-center justify-center">
+                                    <img src="{{ asset('assets/img/icons/icon-buttery-white-black-play.svg') }}" alt="icon-buttery-white-black-play" width="50" height="50" />
+                                </span>
                             </a>
                         </div>
                     </div>
