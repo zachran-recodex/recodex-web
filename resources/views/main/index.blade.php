@@ -11,39 +11,40 @@
                         <!-- Hero Left Block -->
                         <div class="text-center text-colorButteryWhite lg:text-start">
                             <h1>
-                                A
-                                <span class="inline-flex items-center gap-5">creative
-                                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="w-12 md:w-14 lg:w-auto h-auto"/></span>
-                                design studio
+                                {{ $hero->title }}
+                                <span class="inline-flex items-center gap-5">
+                                    <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="w-12 md:w-14 lg:w-auto h-auto"/>
+                                </span>
                             </h1>
                             <p class="mb-10 mt-6 text-lg leading-[1.4] md:mb-14 lg:text-[21px]">
-                                We're a creative design studio specializing in meeting the
-                                needs of the new generation. We offer innovative and
-                                cutting-edge design solutions to help our clients stand
-                                out in today's fast-paced.
+                                {{ $hero->subtitle }}
                             </p>
 
                             <div class="mb-[50px] flex flex-wrap items-center justify-center gap-4 lg:justify-start">
                                 <div class="flex -space-x-3">
-                                    <img src="assets/img/images/th-1/hero-user-1.png" alt="hero-user-1" width="60" height="60" class="z-0 h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
-                                    <img src="assets/img/images/th-1/hero-user-2.png" alt="hero-user-2" width="60" height="60" class="z-[2] h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
-                                    <img src="assets/img/images/th-1/hero-user-3.png" alt="hero-user-3" width="60" height="60" class="z-[3] h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
+                                    <img src="{{ asset('assets/img/images/th-1/hero-user-1.png') }}" alt="hero-user-1" width="60" height="60" class="z-0 h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
+                                    <img src="{{ asset('assets/img/images/th-1/hero-user-2.png') }}" alt="hero-user-2" width="60" height="60" class="z-[2] h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
+                                    <img src="{{ asset('assets/img/images/th-1/hero-user-3.png') }}" alt="hero-user-3" width="60" height="60" class="z-[3] h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
                                 </div>
-                                <span class="text-base font-semibold">Believed by more than a thousand people</span>
+                                <span class="text-base font-semibold">{{ $hero->motto }}</span>
                             </div>
 
-                            <a href="contact.html" class="btn-primary relative pr-20 md:pr-[118px]">Book a free consultation
-                                <span class="absolute right-[5px] inline-flex h-[50px] w-[50px] items-center justify-center rounded-[50%] bg-black"><img src="assets/img/icons/icon-buttery-white-phone.svg" alt="icon-buttery-white-phone" width="30" height="30" /></span></a>
+                            <a href="contact.html" class="btn-primary relative pr-20 md:pr-[118px]">
+                                {{ $hero->button_text }}
+                                <span class="absolute right-[5px] inline-flex h-[50px] w-[50px] items-center justify-center rounded-[50%] bg-black">
+                                    <img src="{{ asset('assets/img/icons/icon-buttery-white-phone.svg') }}" alt="icon-buttery-white-phone" width="30" height="30" />
+                                </span>
+                            </a>
                         </div>
                         <!-- Hero Left Block -->
                         <!-- Hero Right Block -->
                         <div class="mx-auto inline-block max-w-[495px] overflow-hidden rounded-[25px] bg-colorButteryWhite p-[5px] lg:mx-0">
-                            <img src="assets/img/images/th-1/hero-img.jpg" alt="hero-img" width="485" height="540" class="h-full w-full rounded-[20px] object-cover" />
+                            <img src="{{ Storage::url($hero->image) }}" alt="hero-img" width="485" height="540" class="h-full w-full rounded-[20px] object-cover" />
                         </div>
                         <!-- Hero Right Block -->
 
                         <!-- Hero Elements -->
-                        <img src="assets/img/elemnts/element-light-lime-curve-arrow.svg" alt="element-light-lime-curve-arrow" width="284" height="153" class="absolute bottom-0 left-1/2 -z-10 hidden h-auto max-w-52 -translate-x-1/2 lg:inline-block xl:max-w-full" />
+                        <img src="{{ asset('assets/img/elemnts/element-light-lime-curve-arrow.svg') }}" alt="element-light-lime-curve-arrow" width="284" height="153" class="absolute bottom-0 left-1/2 -z-10 hidden h-auto max-w-52 -translate-x-1/2 lg:inline-block xl:max-w-full" />
                         <!-- Hero Elements -->
                     </div>
                     <!-- Hero Area -->
