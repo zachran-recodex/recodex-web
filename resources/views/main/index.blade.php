@@ -366,7 +366,7 @@
                             Clients are always satisfied with
                             <span>
                                             us
-                                            <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                                            <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
                                         </span>
                         </h2>
                     </div>
@@ -514,62 +514,62 @@
             <div class="horizontal-slide-from-right-to-left flex items-center gap-x-6">
                 <!-- Text Slider Item Text-->
                 <div class="whitespace-nowrap font-syne text-[35px] font-bold leading-none tracking-[1px] text-colorLightLime">
-                    Let's create new experiences
+                    Recodex ID
                 </div>
                 <!-- Text Slider Item Text -->
                 <!-- Text Slider Separator Icon -->
                 <div class="h-10 min-w-[42px]">
-                    <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
+                    <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
                 </div>
                 <!-- Text Slider Separator Icon -->
                 <!-- Text Slider Item Text-->
                 <div class="whitespace-nowrap font-syne text-[35px] font-bold leading-none tracking-[1px] text-colorLightLime">
-                    Let's create new experiences
+                    Recodex ID
                 </div>
                 <!-- Text Slider Item Text -->
                 <!-- Text Slider Separator Icon -->
                 <div class="h-10 min-w-[42px]">
-                    <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
+                    <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
                 </div>
                 <!-- Text Slider Separator Icon -->
                 <!-- Text Slider Item Text-->
                 <div class="whitespace-nowrap font-syne text-[35px] font-bold leading-none tracking-[1px] text-colorLightLime">
-                    Let's create new experiences
+                    Recodex ID
                 </div>
                 <!-- Text Slider Item Text -->
                 <!-- Text Slider Separator Icon -->
                 <div class="h-10 min-w-[42px]">
-                    <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
+                    <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
                 </div>
                 <!-- Text Slider Separator Icon -->
                 <!-- Text Slider Item Text-->
                 <div class="whitespace-nowrap font-syne text-[35px] font-bold leading-none tracking-[1px] text-colorLightLime">
-                    Let's create new experiences
+                    Recodex ID
                 </div>
                 <!-- Text Slider Item Text -->
                 <!-- Text Slider Separator Icon -->
                 <div class="h-10 min-w-[42px]">
-                    <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
+                    <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
                 </div>
                 <!-- Text Slider Separator Icon -->
                 <!-- Text Slider Item Text-->
                 <div class="whitespace-nowrap font-syne text-[35px] font-bold leading-none tracking-[1px] text-colorLightLime">
-                    Let's create new experiences
+                    Recodex ID
                 </div>
                 <!-- Text Slider Item Text -->
                 <!-- Text Slider Separator Icon -->
                 <div class="h-10 min-w-[42px]">
-                    <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
+                    <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
                 </div>
                 <!-- Text Slider Separator Icon -->
                 <!-- Text Slider Item Text-->
                 <div class="whitespace-nowrap font-syne text-[35px] font-bold leading-none tracking-[1px] text-colorLightLime">
-                    Let's create new experiences
+                    Recodex ID
                 </div>
                 <!-- Text Slider Item Text -->
                 <!-- Text Slider Separator Icon -->
                 <div class="h-10 min-w-[42px]">
-                    <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
+                    <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="h-10 w-auto" />
                 </div>
                 <!-- Text Slider Separator Icon -->
             </div>
@@ -589,7 +589,7 @@
                         We have a team of creative
                         <span>
                                         people
-                                        <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                                        <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
                                     </span>
                     </h2>
                 </div>
