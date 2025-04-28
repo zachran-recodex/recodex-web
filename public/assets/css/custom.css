@@ -92,3 +92,12 @@
 .offcanvas-body {
   transition: transform 0.3s ease;
 }
+
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-slide {
+    animation: slide 20s linear infinite;
+}
