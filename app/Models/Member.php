@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Member extends Model
 {
@@ -13,6 +14,7 @@ class Member extends Model
      */
     protected $fillable = [
         'name',
+        'slug',
         'position',
         'photo_path',
         'description',
@@ -29,4 +31,36 @@ class Member extends Model
     protected $casts = [
         'social_links' => 'array',
     ];
+
+    /**
+     * Boot the model.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Auto-generate slug before saving
+        static::creating(function ($member) {
+            if (empty($member->slug)) {
+                $member->slug = Str::slug($member->name);
+            }
+        });
+
+        // Update slug when name changes
+        static::updating(function ($member) {
+            if ($member->isDirty('name') && !$member->isDirty('slug')) {
+                $member->slug = Str::slug($member->name);
+            }
+        });
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->decimal('monthly_price', 10, 2)->default(0);
             $table->decimal('quarterly_price', 10, 2)->default(0);
-            $table->decimal('semiannual_price', 10, 2)->default(0);
-            $table->decimal('yearly_price', 10, 2)->default(0);
+            $table->decimal('semi_annually_price', 10, 2)->default(0);
+            $table->decimal('annually_price', 10, 2)->default(0);
             $table->json('features')->nullable();
             $table->boolean('is_active')->default(true);
             $table->integer('sort_order')->default(0);

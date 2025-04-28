@@ -17,8 +17,15 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.group heading="CMS" class="grid">
+                    <flux:navlist.item icon="squares-plus" :href="route('cms.dashboard')" :current="request()->routeIs('cms.dashboard')" wire:navigate>Dashboard</flux:navlist.item>
                     <flux:navlist.item icon="document-text" :href="route('cms.faqs')" :current="request()->routeIs('cms.faqs')" wire:navigate>Manage FAQs</flux:navlist.item>
                     <flux:navlist.item icon="briefcase" :href="route('cms.services')" :current="request()->routeIs('cms.services')" wire:navigate>Manage Services</flux:navlist.item>
+                    <flux:navlist.item icon="users" :href="route('cms.members')" :current="request()->routeIs('cms.members')" wire:navigate>Manage Team Members</flux:navlist.item>
+                    <flux:navlist.item icon="currency-dollar" :href="route('cms.pricings')" :current="request()->routeIs('cms.pricings')" wire:navigate>Manage Pricing Packages</flux:navlist.item>
+                    <flux:navlist.item icon="squares-2x2" :href="route('cms.projects')" :current="request()->routeIs('cms.projects')" wire:navigate>Manage Projects</flux:navlist.item>
+                    <flux:navlist.item icon="arrow-path" :href="route('cms.work-processes')" :current="request()->routeIs('cms.work-processes')" wire:navigate>Manage Work Processes</flux:navlist.item>
+                    <flux:navlist.item icon="information-circle" :href="route('cms.about')" :current="request()->routeIs('cms.about')" wire:navigate>Manage About</flux:navlist.item>
+                    <flux:navlist.item icon="flag" :href="route('cms.hero')" :current="request()->routeIs('cms.hero')" wire:navigate>Manage Hero</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 

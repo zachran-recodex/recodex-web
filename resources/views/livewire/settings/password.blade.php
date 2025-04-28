@@ -58,7 +58,7 @@ new class extends Component {
             />
             <flux:input
                 wire:model="password_confirmation"
-                :label="Confirm Password"
+                label="Confirm Password"
                 type="password"
                 required
                 autocomplete="new-password"
