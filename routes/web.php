@@ -20,6 +20,7 @@ Route::middleware(['auth'])->group(function () {
 
         // CMS Routes
         Route::prefix('content-management-system')->name('cms.')->group(function () {
+            Route::get('/', App\Livewire\CMS\Dashboard::class)->name('dashboard');
             Route::get('/faqs', App\Livewire\CMS\ManageFaqs::class)->name('faqs');
             Route::get('/services', App\Livewire\CMS\ManageServices::class)->name('services');
             Route::get('/members', App\Livewire\CMS\ManageMembers::class)->name('members');
