@@ -24,6 +24,7 @@
                     <flux:navlist.item icon="squares-2x2" :href="route('cms.projects')" :current="request()->routeIs('cms.projects')" wire:navigate>Manage Projects</flux:navlist.item>
                     <flux:navlist.item icon="arrow-path" :href="route('cms.work-processes')" :current="request()->routeIs('cms.work-processes')" wire:navigate>Manage Work Processes</flux:navlist.item>
                     <flux:navlist.item icon="information-circle" :href="route('cms.about')" :current="request()->routeIs('cms.about')" wire:navigate>Manage About</flux:navlist.item>
+                    <flux:navlist.item icon="flag" :href="route('cms.hero')" :current="request()->routeIs('cms.hero')" wire:navigate>Manage Hero</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
