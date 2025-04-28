@@ -18,6 +18,8 @@ Route::controller(MainController::class)->group(function () {
 
     Route::get('/portfolio/{project}', 'showProject')->name('projects.show');
 
+    Route::get('/konsultasi', 'contact')->name('contact');
+
 });
 
 Route::view('dashboard', 'dashboard')

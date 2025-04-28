@@ -29,7 +29,7 @@
                                 <span class="text-base font-semibold">{{ $hero->motto }}</span>
                             </div>
 
-                            <a href="#" class="btn-primary relative pr-20 md:pr-[118px]">
+                            <a href="{{ route('contact') }}" class="btn-primary relative pr-20 md:pr-[118px]">
                                 {{ $hero->button_text }}
                                 <span class="absolute right-[5px] inline-flex h-[50px] w-[50px] items-center justify-center rounded-[50%] bg-black">
                                     <img src="{{ asset('assets/img/icons/icon-buttery-white-phone.svg') }}" alt="icon-buttery-white-phone" width="30" height="30" />

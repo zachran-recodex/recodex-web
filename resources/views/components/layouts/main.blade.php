@@ -81,7 +81,7 @@
 
                         <!-- Header Right Block -->
                         <div class="flex items-center gap-x-6">
-                            <a href="contact.html" class="btn-primary relative hidden px-[30px] py-[10px] sm:inline-flex">Contact Us</a>
+                            <a href="{{ route('contact') }}" class="btn-primary relative hidden px-[30px] py-[10px] sm:inline-flex">Konsultasi</a>
 
                             <!-- Responsive Offcanvas Menu Button -->
                             <div class="block lg:hidden">

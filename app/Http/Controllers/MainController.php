@@ -85,4 +85,9 @@ class MainController extends Controller
 
         return view('main.project-details', compact('project', 'relatedProjects'));
     }
+
+    public function contact()
+    {
+        return view('main.contact');
+    }
 }
