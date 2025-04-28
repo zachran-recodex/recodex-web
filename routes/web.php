@@ -8,9 +8,21 @@ Route::controller(MainController::class)->group(function () {
 
     Route::get('/', 'index')->name('home');
 
+    Route::get('/tentang-kami', 'about')->name('about');
+
+    Route::get('/layanan', 'service')->name('services');
+
+    Route::get('/layanan/{service}', 'showService')->name('services.show');
+
+    Route::get('/portfolio', 'project')->name('projects');
+
+    Route::get('/portfolio/{project}', 'showProject')->name('projects.show');
+
+    Route::get('/konsultasi', 'contact')->name('contact');
+
 });
 
-Route::view('dashboard', 'dashboard')
+Route::view('dashboard', 'dashboard.index')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
