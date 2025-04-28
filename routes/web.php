@@ -14,6 +14,10 @@ Route::controller(MainController::class)->group(function () {
 
     Route::get('/layanan/{service}', 'showService')->name('services.show');
 
+    Route::get('/portfolio', 'project')->name('projects');
+
+    Route::get('/portfolio/{project}', 'showProject')->name('projects.show');
+
 });
 
 Route::view('dashboard', 'dashboard')

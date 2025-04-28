@@ -69,6 +69,9 @@
                                                 @endforeach
                                             </ul>
                                         </li>
+                                        <li class="nav-link-item drop-trigger text-colorDark rounded-none border border-transparent lg:text-white">
+                                            <a href="{{ route('projects') }}" class="nav-link-item">Portfolio</a>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
