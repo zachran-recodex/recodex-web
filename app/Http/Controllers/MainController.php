@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Hero;
+use App\Models\Member;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\WorkProcess;
@@ -26,14 +27,23 @@ class MainController extends Controller
             ->orderBy('sort_order')
             ->get();
 
-        return view('main.index', compact('hero', 'services', 'projects', 'works'));
+        $members = Member::where('is_active', true)
+            ->orderBy('sort_order')
+            ->limit(4)
+            ->get();
+
+        return view('main.index', compact('hero', 'services', 'projects', 'works', 'members'));
     }
 
     public function about()
     {
         $about = About::first();
 
-        return view('main.about', compact('about'));
+        $members = Member::where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
+
+        return view('main.about', compact('about', 'members'));
     }
 
     public function service()
