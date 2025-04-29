@@ -4,7 +4,6 @@ namespace App\Livewire\CMS;
 
 use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
@@ -17,8 +16,8 @@ class ManageProjects extends Component
     // Form properties
     public $projectId;
     public $title;
-    public $slug;
     public $client;
+    public $category;
     public $date;
     public $duration;
     public $cost;
@@ -53,8 +52,8 @@ class ManageProjects extends Component
 
     protected $rules = [
         'title' => 'required|min:3|max:255',
-        'slug' => 'nullable|max:255',
-        'client' => 'nullable|max:255',
+        'client' => 'required|min:3|max:255',
+        'category' => 'required|min:3|max:255',
         'date' => 'nullable|date',
         'duration' => 'nullable|max:255',
         'cost' => 'nullable|max:255',
@@ -70,18 +69,13 @@ class ManageProjects extends Component
         $this->resetInputFields();
     }
 
-    public function updatedTitle()
-    {
-        $this->slug = Str::slug($this->title);
-    }
-
     private function resetInputFields()
     {
         $this->reset([
             'projectId',
             'title',
-            'slug',
             'client',
+            'category',
             'date',
             'duration',
             'cost',
@@ -126,8 +120,8 @@ class ManageProjects extends Component
         $project = Project::findOrFail($id);
         $this->projectId = $id;
         $this->title = $project->title;
-        $this->slug = $project->slug;
         $this->client = $project->client;
+        $this->category = $project->category;
         $this->date = $project->date ? $project->date->format('Y-m-d') : null;
         $this->duration = $project->duration;
         $this->cost = $project->cost;
@@ -153,8 +147,8 @@ class ManageProjects extends Component
 
         $data = [
             'title' => $this->title,
-            'slug' => $this->slug ?: Str::slug($this->title),
             'client' => $this->client,
+            'category' => $this->category,
             'date' => $this->date,
             'duration' => $this->duration,
             'cost' => $this->cost,
@@ -280,6 +274,7 @@ class ManageProjects extends Component
             ->when($this->search, function ($query) {
                 return $query->where('title', 'like', '%' . $this->search . '%')
                     ->orWhere('client', 'like', '%' . $this->search . '%')
+                    ->orWhere('category', 'like', '%' . $this->search . '%')
                     ->orWhere('description', 'like', '%' . $this->search . '%');
             })
             ->orderBy($this->sortField, $this->sortDirection)

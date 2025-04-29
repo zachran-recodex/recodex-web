@@ -6,7 +6,23 @@
                 <flux:input class="w-full" wire:model.live.debounce.300ms="search" placeholder="Search projects..." icon="magnifying-glass" />
             </div>
 
-            <flux:button variant="primary" icon="plus" wire:click="create">Create</flux:button>
+            <div class="flex items-center gap-4">
+                <flux:dropdown>
+                    <flux:button icon:trailing="chevron-down">Sort by</flux:button>
+
+                    <flux:menu>
+                        <flux:menu.radio.group>
+                            <flux:menu.radio wire:click="sortBy('sort_order')" :checked="$sortField === 'sort_order'">Default</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('title')" :checked="$sortField === 'title'">Title</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('category')" :checked="$sortField === 'category'">Category</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('client')" :checked="$sortField === 'client'">Client</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('created_at')" :checked="$sortField === 'created_at'">Created At</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('is_active')" :checked="$sortField === 'is_active'">Status</flux:menu.radio>
+                        </flux:menu.radio.group>
+                    </flux:menu>
+                </flux:dropdown>
+                <flux:button variant="primary" icon="plus" wire:click="create">Create</flux:button>
+            </div>
         </div>
     </header>
 
@@ -25,10 +41,13 @@
                             Title
                         </flux:table.column>
                         <flux:table.column>
+                            Category
+                        </flux:table.column>
+                        <flux:table.column>
                             Client
                         </flux:table.column>
                         <flux:table.column>
-                            Date
+                            Start Date
                         </flux:table.column>
                         <flux:table.column>
                             Status
@@ -47,10 +66,13 @@
                                     {{ $project->title }}
                                 </flux:table.cell>
                                 <flux:table.cell>
-                                    {{ $project->client ?? '—' }}
+                                    {{ $project->category }}
                                 </flux:table.cell>
                                 <flux:table.cell>
-                                    {{ $project->date ? $project->date->format('M d, Y') : '—' }}
+                                    {{ $project->client }}
+                                </flux:table.cell>
+                                <flux:table.cell>
+                                    {{ $project->date ? $project->date->format('d F Y') : '—' }}
                                 </flux:table.cell>
                                 <flux:table.cell>
                                     <flux:badge :color="$project->is_active ? 'green' : 'red'">
@@ -69,16 +91,12 @@
                             </flux:table.row>
                         @empty
                             <flux:table.row>
-                                <flux:table.cell colspan="6" class="text-center py-8">
+                                <flux:table.cell colspan="7" class="text-center py-8">
                                     <div class="flex flex-col items-center justify-center space-y-2">
                                         <flux:icon.inbox class="w-10 h-10 text-zinc-400" />
                                         <p class="text-zinc-500 dark:text-zinc-400">No projects found</p>
                                         @if ($search)
                                             <p class="text-sm text-zinc-500 dark:text-zinc-400">Try adjusting your search criteria</p>
-                                        @else
-                                            <flux:button wire:click="create" size="sm" variant="primary">
-                                                Add Your First Project
-                                            </flux:button>
                                         @endif
                                     </div>
                                 </flux:table.cell>
@@ -86,7 +104,7 @@
                         @endforelse
                     </flux:table.rows>
                     <flux:table.columns class="border-none">
-                        <flux:table.column colspan="6">
+                        <flux:table.column colspan="7">
                             {{ $projects->links() }}
                         </flux:table.column>
                     </flux:table.columns>
@@ -96,7 +114,7 @@
     </main>
 
     <!-- Create/Edit Modal -->
-    <flux:modal wire:model="isOpen" class="max-w-3xl">
+    <flux:modal wire:model="isOpen" class="min-w-sm md:min-w-2xl lg:min-w-3xl">
         <div class="space-y-6">
             <div>
                 <flux:heading size="lg">{{ $projectId ? 'Edit Project' : 'Add New Project' }}</flux:heading>
@@ -108,12 +126,21 @@
             <form wire:submit="store" class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Title -->
-                    <flux:field class="md:col-span-2">
+                    <flux:field>
                         <flux:label>Title</flux:label>
 
                         <flux:input wire:model="title" placeholder="Enter project title" />
 
                         <flux:error name="title" />
+                    </flux:field>
+
+                    <!-- Category -->
+                    <flux:field>
+                        <flux:label>Category</flux:label>
+
+                        <flux:input wire:model="category" placeholder="Enter project category" />
+
+                        <flux:error name="category" />
                     </flux:field>
 
                     <!-- Image -->
@@ -148,7 +175,7 @@
 
                     <!-- Date -->
                     <flux:field>
-                        <flux:label>Date</flux:label>
+                        <flux:label>Start Date</flux:label>
 
                         <flux:input type="date" wire:model="date" />
 
@@ -168,7 +195,7 @@
                     <flux:field>
                         <flux:label>Cost</flux:label>
 
-                        <flux:input wire:model="cost" placeholder="e.g. 50k USD" />
+                        <flux:input wire:model="cost" placeholder="e.g. Rp 2.000.000" />
 
                         <flux:error name="cost" />
                     </flux:field>

@@ -1,3 +1,28 @@
+@section('meta_tag')
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Recodex ID - Jasa pembuatan website profesional dengan teknologi terkini. Kami menyediakan layanan pengembangan web yang responsif, SEO-friendly, dan disesuaikan dengan kebutuhan bisnis Anda.">
+    <meta name="keywords" content="jasa pembuatan website, web development, website profesional, website bisnis, website company profile, website toko online, web developer Indonesia">
+    <meta name="author" content="RECODEX ID">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Recodex ID - Jasa Pembuatan Website Profesional">
+    <meta property="og:description" content="Solusi digital terbaik untuk bisnis Anda dengan layanan pembuatan website profesional yang responsif dan SEO-friendly.">
+    <meta property="og:image" content="{{ asset('images/hero.jpg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recodex ID - Jasa Pembuatan Website Profesional">
+    <meta name="twitter:description" content="Solusi digital terbaik untuk bisnis Anda dengan layanan pembuatan website profesional yang responsif dan SEO-friendly.">
+    <meta name="twitter:image" content="{{ asset('images/hero.jpg') }}">
+
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <title>Recodex ID - Jasa Pembuatan Website Profesional | Web Development Indonesia</title>
+@endsection
+
 <x-layouts.main>
     <!-- ...::: Hero Section Start :::... -->
     <section class="section-hero">
@@ -21,10 +46,12 @@
                             </p>
 
                             <div class="mb-[50px] flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                                <div class="flex -space-x-3">
-                                    <img src="{{ asset('assets/img/images/th-1/hero-user-1.png') }}" alt="hero-user-1" width="60" height="60" class="z-0 h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
-                                    <img src="{{ asset('assets/img/images/th-1/hero-user-2.png') }}" alt="hero-user-2" width="60" height="60" class="z-[2] h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
-                                    <img src="{{ asset('assets/img/images/th-1/hero-user-3.png') }}" alt="hero-user-3" width="60" height="60" class="z-[3] h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
+                                <div class="flex space-x-3">
+                                    <flux:icon.star variant="solid" width="40" height="40" />
+                                    <flux:icon.star variant="solid" width="40" height="40" />
+                                    <flux:icon.star variant="solid" width="40" height="40" />
+                                    <flux:icon.star variant="solid" width="40" height="40" />
+                                    <flux:icon.star variant="solid" width="40" height="40" />
                                 </div>
                                 <span class="text-base font-semibold">{{ $hero->motto }}</span>
                             </div>
@@ -69,7 +96,7 @@
                         <h2 class="jos">
                             Layanan Profesional Jasa Pembuatan Website
                             <span>
-                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px] animate-spin animate-infinite" />
+                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
                             </span>
                         </h2>
                     </div>
@@ -216,18 +243,18 @@
                                 <!-- Single Slide Item -->
                                 <div class="swiper-slide">
                                     <div class="group relative overflow-hidden rounded-[20px] border-[5px] border-colorButteryWhite">
-                                        <img src="{{ Storage::url($project->image_path) }}" alt="{{ $project->title }}" width="516" height="390" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-110" />
+                                        <img src="{{ Storage::url($project->image_path) }}" alt="{{ $project->title }} - {{ $project->client }}" width="516" height="390" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-110" />
 
                                         <div class="w-[calc(100%-48px) absolute bottom-0 flex flex-col items-start gap-x-10 gap-y-8 p-6 sm:flex-row sm:items-center">
                                             <div class="max-w-[380px] flex-1 text-colorButteryWhite">
-                                                <a href="{{ route('projects.show', $project->slug) }}" class="mb-[10px] block font-syne text-2xl font-bold leading-[1.4] group-hover:text-colorLightLime md:text-3xl">
+                                                <a href="{{ route('projects.show', [$project->slug, $project->client_slug]) }}" class="mb-[10px] block font-syne text-2xl font-bold leading-[1.4] group-hover:text-colorLightLime md:text-3xl">
                                                     {{ $project->title }}
                                                 </a>
                                                 <p class="line-clamp-2">
-                                                    {{ Str::limit($project->description, 50) }}
+                                                    {{ $project->client }}
                                                 </p>
                                             </div>
-                                            <a href="{{ route('projects.show', $project->slug) }}" class="relative inline-flex items-start justify-center overflow-hidden">
+                                            <a href="{{ route('projects.show', [$project->slug, $project->client_slug]) }}" class="relative inline-flex items-start justify-center overflow-hidden">
                                                 <img src="{{ asset('assets/img/icons/icon-buttery-white-arrow-right.svg') }}" alt="icon-buttery-white-arrow-right" width="34" height="28" class="translate-x-0 opacity-100 transition-all duration-300 group-hover:translate-x-full group-hover:opacity-0" />
                                                 <img src="{{ asset('assets/img/icons/icon-light-lime-arrow-right.svg') }}" alt="light-lime-arrow-right" width="34" height="28" class="absolute -translate-x-full opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                                             </a>

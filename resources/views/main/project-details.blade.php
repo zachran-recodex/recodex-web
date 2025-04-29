@@ -1,3 +1,28 @@
+@section('meta_tag')
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Recodex ID - Jasa pembuatan website profesional dengan teknologi terkini. Kami menyediakan layanan pengembangan web yang responsif, SEO-friendly, dan disesuaikan dengan kebutuhan bisnis Anda.">
+    <meta name="keywords" content="jasa pembuatan website, web development, website profesional, website bisnis, website company profile, website toko online, web developer Indonesia">
+    <meta name="author" content="RECODEX ID">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Recodex ID - Jasa Pembuatan Website Profesional">
+    <meta property="og:description" content="Solusi digital terbaik untuk bisnis Anda dengan layanan pembuatan website profesional yang responsif dan SEO-friendly.">
+    <meta property="og:image" content="{{ asset('images/hero.jpg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recodex ID - Jasa Pembuatan Website Profesional">
+    <meta name="twitter:description" content="Solusi digital terbaik untuk bisnis Anda dengan layanan pembuatan website profesional yang responsif dan SEO-friendly.">
+    <meta name="twitter:image" content="{{ asset('images/hero.jpg') }}">
+
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <title>Recodex ID - Jasa Pembuatan Website Profesional | Web Development Indonesia</title>
+@endsection
+
 <x-layouts.main>
     <!-- ...::: Breadcrumb Section Start :::... -->
     <section class="section-breadcrumb">
@@ -38,7 +63,7 @@
             <div class="container">
                 <!-- Portfolio Hero Image Block -->
                 <div class="overflow-hidden rounded-[31px] border-[5px] border-black">
-                    <img src="{{ Storage::url($project->image_path) }}" alt="{{ $project->title }}" class="h-auto w-full" />
+                    <img src="{{ Storage::url($project->image_path) }}" alt="{{ $project->title }} - {{ $project->client }}" class="h-auto w-full" />
                 </div>
                 <!-- Portfolio Hero Image Block -->
 
@@ -50,7 +75,7 @@
                     </li>
                     <li class="flex items-center gap-x-4">
                         <h4>Tanggal:</h4>
-                        <span>{{ \Carbon\Carbon::parse($project->date)->locale('id')->translatedFormat('F d, Y') }}</span>
+                        <span>{{ \Carbon\Carbon::parse($project->date)->locale('id')->translatedFormat('d F Y') }}</span>
                     </li>
                     <li class="flex items-center gap-x-4">
                         <h4>Durasi:</h4>
@@ -102,7 +127,7 @@
                     <!-- Content Left Block -->
                     <!-- Content Right Block -->
                     <div class="mx-auto max-w-[450px] overflow-hidden rounded-[23px] border-[5px] border-black lg:mx-0 lg:max-w-full">
-                        <img src="{{ Storage::url($project->content_image_path) }}" alt="{{ $project->title }}" width="456" height="736" class="h-auto w-full object-cover lg:h-full" />
+                        <img src="{{ Storage::url($project->content_image_path) }}" alt="{{ $project->title }} - {{ $project->client }}" width="456" height="736" class="h-auto w-full object-cover lg:h-full" />
                     </div>
                     <!-- Content Right Block -->
                 </div>
@@ -144,20 +169,20 @@
                         <div class="swiper-slide">
                             <div class="group relative overflow-hidden rounded-[25px] border-2 border-black lg:border-[5px]">
                                 <!-- Thumbnail -->
-                                <img src="{{ Storage::url($project->image_path) }}" alt="project-slide-img-1.jpg" width="613" height="390" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-110" />
+                                <img src="{{ Storage::url($project->image_path) }}" alt="{{ $project->title }} - {{ $project->client }}" width="613" height="390" class="h-full w-full object-cover transition-all duration-300 group-hover:scale-110" />
                                 <!-- Thumbnail -->
 
                                 <!-- Content -->
                                 <div class="absolute bottom-0 z-10 flex w-full flex-col items-start justify-between gap-x-7 gap-y-8 p-6 transition-all duration-300 sm:flex-row sm:items-center lg:translate-y-full lg:group-hover:translate-y-0">
                                     <div class="max-w-[400px] flex-1 text-colorButteryWhite">
-                                        <a href="{{ route('projects.show', $project->slug) }}" class="mb-[10px] block font-syne text-2xl font-bold leading-[1.4] hover:text-colorLightLime md:text-3xl">
+                                        <a href="{{ route('projects.show', [$project->slug, $project->client_slug]) }}" class="mb-[10px] block font-syne text-2xl font-bold leading-[1.4] hover:text-colorLightLime md:text-3xl">
                                             {{ $project->title }}
                                         </a>
                                         <p class="line-clamp-2">
                                             {{ Str::limit($project->description, 50) }}
                                         </p>
                                     </div>
-                                    <a href="{{ route('projects.show', $project->slug) }}" class="relative hidden items-start justify-center overflow-hidden sm:inline-flex">
+                                    <a href="{{ route('projects.show', [$project->slug, $project->client_slug]) }}" class="relative hidden items-start justify-center overflow-hidden sm:inline-flex">
                                         <img src="{{ asset('assets/img/icons/icon-buttery-white-arrow-right.svg') }}" alt="icon-buttery-white-arrow-right" width="34" height="28" class="translate-x-0 opacity-100 transition-all duration-300 group-hover:translate-x-full group-hover:opacity-0" />
                                         <img src="{{ asset('assets/img/icons/icon-light-lime-arrow-right.svg') }}" alt="light-lime-arrow-right" width="34" height="28" class="absolute -translate-x-full opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                                     </a>
