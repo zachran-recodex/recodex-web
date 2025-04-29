@@ -1,6 +1,6 @@
 <div>
     <header class="mb-6">
-        <flux:heading size="xl" level="1">Content Management System Dashboard</flux:heading>
+        <flux:heading size="xl" level="1">Content Management System</flux:heading>
         <flux:subheading size="lg" class="mb-6">Overview of your content management system</flux:subheading>
     </header>
 
