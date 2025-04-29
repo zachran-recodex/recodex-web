@@ -6,7 +6,11 @@
         <title>Recodex ID - Jasa Pembuatan Website Profesional</title>
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
         <!-- Site font -->
         <link rel="stylesheet" href="{{ asset('assets/fonts/webfonts/inter/stylesheet.css') }}" />
@@ -36,8 +40,9 @@
                         <!-- Header Left Block -->
                         <div class="flex items-center gap-x-10">
                             <!-- Header Logo -->
-                            <a href="{{ route('home') }}" class="h-auto w-auto">
-                                <img src="{{ asset('assets/img/logo-buttery-white.svg') }}" alt="logo-buttery-white" width="121" height="24" />
+                            <a href="{{ route('home') }}" class="h-auto w-auto flex items-center gap-4">
+                                <img class="h-14 w-auto" src="{{ asset('images/small-logo.png') }}" alt="logo-recodex" width="121" height="24" />
+                                <p class="text-2xl font-semibold" style="color:#86c332">RECODEX ID</p>
                             </a>
                             <!-- Header Logo -->
 
@@ -120,18 +125,15 @@
                                     <!-- Section Block -->
                                     <div class="section-block text-colorButteryWhite">
                                         <h2 class="mb-6">
-                                            Let's start a
+                                            Yuk mulai
                                             <span>
-                                                <img src="assets/img/elemnts/shape-light-lime-5-arms-star.svg" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
+                                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg')}}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
                                             </span>
-                                            project together
+                                            proyek bersama!
                                         </h2>
 
                                         <p class="section-para">
-                                            We work closely with our clients to understand their
-                                            objectives, target audience, and unique needs. We use our
-                                            creative skills to translate these requirements and
-                                            practical design solutions.
+                                            Kami akan berkolaborasi penuh dengan Anda untuk memahami tujuan bisnis, target audience, dan kebutuhan khusus. Kemampuan kreatif kami akan mentransformasi semua itu menjadi solusi website yang powerful dan efektif.
                                         </p>
                                     </div>
                                     <!-- Section Block -->
@@ -141,13 +143,12 @@
                                             <!-- Footer Info -->
                                             <ul class="mt-12 flex flex-col gap-y-3">
                                                 <li>
-                                                    <span class="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Give us a call:</span>
-                                                    <a href="tel:+1234567890" class="text-[21px] leading-[1.42] text-colorButteryWhite">(123) 456-7890</a>
+                                                    <span class="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Hubungi:</span>
+                                                    <a href="tel:+1234567890" class="text-[21px] leading-[1.42] text-colorButteryWhite">(+62) 822-9814-1940</a>
                                                 </li>
                                                 <li>
-                                                    <span class="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Send us an email:
-                                                    </span>
-                                                    <a href="mailto:yourmail@email.com" class="text-[21px] leading-[1.42] text-colorButteryWhite">yourmail@email.com</a>
+                                                    <span class="block font-syne text-[21px] font-bold leading-[1.42] text-colorLightLime">Email:</span>
+                                                    <a href="mailto:yourmail@email.com" class="text-[21px] leading-[1.42] text-colorButteryWhite">info@recodex.id</a>
                                                 </li>
                                             </ul>
                                             <!-- Footer Info -->
@@ -211,14 +212,15 @@
                     <div class="py-[35px]">
                         <!-- Section Container -->
                         <div class="container">
-                            <div class="flex flex-wrap justify-center gap-x-[30px] gap-y-4 lg:justify-between">
-                                <a href="index.html">
-                                    <img src="assets/img/logo-buttery-white.svg" alt="logo-buttery-white" width="121" height="24" />
+                            <div class="flex flex-wrap justify-center items-center gap-x-[30px] gap-y-4 lg:justify-between">
+                                <a href="{{ route('home') }}" class="flex items-center gap-4">
+                                    <img class="h-14 w-auto" src="{{ asset('images/small-logo.png') }}" alt="logo-recodex" width="121" height="24" />
+                                    <p class="text-2xl font-semibold" style="color:#86c332">RECODEX ID</p>
                                 </a>
 
                                 <!-- Copyright Text -->
                                 <div class="text-colorButteryWhite">
-                                    &copy; Copyright 2024, All Rights Reserved by Mthemeus
+                                    &copy; Copyright 2025, All Rights Reserved by Recodex ID
                                 </div>
                                 <!-- Copyright Text -->
                             </div>

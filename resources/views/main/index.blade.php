@@ -21,10 +21,12 @@
                             </p>
 
                             <div class="mb-[50px] flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                                <div class="flex -space-x-3">
-                                    <img src="{{ asset('assets/img/images/th-1/hero-user-1.png') }}" alt="hero-user-1" width="60" height="60" class="z-0 h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
-                                    <img src="{{ asset('assets/img/images/th-1/hero-user-2.png') }}" alt="hero-user-2" width="60" height="60" class="z-[2] h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
-                                    <img src="{{ asset('assets/img/images/th-1/hero-user-3.png') }}" alt="hero-user-3" width="60" height="60" class="z-[3] h-[66px] w-[66px] rounded-[50%] border-[6px] border-black" />
+                                <div class="flex space-x-3">
+                                    <flux:icon.star variant="solid" width="40" height="40" />
+                                    <flux:icon.star variant="solid" width="40" height="40" />
+                                    <flux:icon.star variant="solid" width="40" height="40" />
+                                    <flux:icon.star variant="solid" width="40" height="40" />
+                                    <flux:icon.star variant="solid" width="40" height="40" />
                                 </div>
                                 <span class="text-base font-semibold">{{ $hero->motto }}</span>
                             </div>
@@ -69,7 +71,7 @@
                         <h2 class="jos">
                             Layanan Profesional Jasa Pembuatan Website
                             <span>
-                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px] animate-spin animate-infinite" />
+                                <img src="{{ asset('assets/img/elemnts/shape-light-lime-5-arms-star.svg') }}" alt="shape-light-lime-5-arms-star" width="74" height="70" class="relative inline-block h-auto w-8 after:bg-black md:w-10 lg:w-[57px]" />
                             </span>
                         </h2>
                     </div>
