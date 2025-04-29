@@ -90,12 +90,12 @@ class MainController extends Controller
         return view('main.project', compact('projects'));
     }
 
-    public function showProject(Project $project)
+    public function showProject($slug, $client_slug)
     {
-        // Check if project is active, if not, return 404
-        if (!$project->is_active) {
-            abort(404);
-        }
+        $project = Project::where('slug', $slug)
+            ->where('client_slug', $client_slug)
+            ->where('is_active', true)
+            ->firstOrFail();
 
         // Get related projects
         $relatedProjects = Project::where('id', '!=', $project->id)

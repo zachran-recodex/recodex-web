@@ -16,6 +16,8 @@ class Project extends Model
         'title',
         'slug',
         'client',
+        'client_slug',
+        'category',
         'date',
         'duration',
         'cost',
@@ -45,16 +47,24 @@ class Project extends Model
         parent::boot();
 
         // Auto-generate slug before saving
-        static::creating(function ($service) {
-            if (empty($service->slug)) {
-                $service->slug = Str::slug($service->title);
+        static::creating(function ($project) {
+            if (empty($project->slug)) {
+                $project->slug = Str::slug($project->title);
+            }
+
+            if (empty($project->client_slug)) {
+                $project->client_slug = Str::slug($project->client);
             }
         });
 
         // Update slug when title changes
-        static::updating(function ($service) {
-            if ($service->isDirty('title') && !$service->isDirty('slug')) {
-                $service->slug = Str::slug($service->title);
+        static::updating(function ($project) {
+            if ($project->isDirty('title') && !$project->isDirty('slug')) {
+                $project->slug = Str::slug($project->title);
+            }
+
+            if ($project->isDirty('client') && !$project->isDirty('client_slug')) {
+                $project->client_slug = Str::slug($project->client);
             }
         });
     }

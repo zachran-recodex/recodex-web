@@ -16,7 +16,7 @@ Route::controller(MainController::class)->group(function () {
 
     Route::get('/portfolio', 'project')->name('projects');
 
-    Route::get('/portfolio/{project}', 'showProject')->name('projects.show');
+    Route::get('/portfolio/{slug}/{client_slug}', 'showProject')->name('projects.show');
 
     Route::get('/konsultasi', 'contact')->name('contact');
 
