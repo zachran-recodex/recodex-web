@@ -40,8 +40,9 @@
                         <!-- Header Left Block -->
                         <div class="flex items-center gap-x-10">
                             <!-- Header Logo -->
-                            <a href="{{ route('home') }}" class="h-auto w-auto">
-                                <img src="{{ asset('assets/img/logo-buttery-white.svg') }}" alt="logo-buttery-white" width="121" height="24" />
+                            <a href="{{ route('home') }}" class="h-auto w-auto flex items-center gap-4">
+                                <img class="h-14 w-auto" src="{{ asset('images/small-logo.png') }}" alt="logo-recodex" width="121" height="24" />
+                                <p class="text-2xl font-semibold" style="color:#86c332">RECODEX ID</p>
                             </a>
                             <!-- Header Logo -->
 
