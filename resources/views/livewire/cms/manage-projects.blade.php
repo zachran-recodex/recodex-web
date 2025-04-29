@@ -6,7 +6,23 @@
                 <flux:input class="w-full" wire:model.live.debounce.300ms="search" placeholder="Search projects..." icon="magnifying-glass" />
             </div>
 
-            <flux:button variant="primary" icon="plus" wire:click="create">Create</flux:button>
+            <div class="flex items-center gap-4">
+                <flux:dropdown>
+                    <flux:button icon:trailing="chevron-down">Sort by</flux:button>
+
+                    <flux:menu>
+                        <flux:menu.radio.group>
+                            <flux:menu.radio wire:click="sortBy('sort_order')" :checked="$sortField === 'sort_order'">Default</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('title')" :checked="$sortField === 'title'">Title</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('category')" :checked="$sortField === 'category'">Category</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('client')" :checked="$sortField === 'client'">Client</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('created_at')" :checked="$sortField === 'created_at'">Created At</flux:menu.radio>
+                            <flux:menu.radio wire:click="sortBy('is_active')" :checked="$sortField === 'is_active'">Status</flux:menu.radio>
+                        </flux:menu.radio.group>
+                    </flux:menu>
+                </flux:dropdown>
+                <flux:button variant="primary" icon="plus" wire:click="create">Create</flux:button>
+            </div>
         </div>
     </header>
 
