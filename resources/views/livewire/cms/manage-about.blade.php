@@ -1,6 +1,7 @@
 <div>
-    <header class="mb-6">
-        <flux:heading level="2" class="text-2xl! font-semibold! mb-4">Manage About Information</flux:heading>
+    <header class="flex justify-between items-center mb-6">
+        <flux:heading level="2" class="text-2xl! font-semibold!">Manage About Us Information</flux:heading>
+        <flux:button variant="primary" icon="pencil-square" wire:click="openModal">Edit</flux:button>
     </header>
 
     <main>
@@ -11,11 +12,6 @@
 
         <!-- About Information Card -->
         <div class="rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 p-6">
-            <div class="flex justify-between items-center mb-6">
-                <flux:heading level="3" class="text-xl! font-medium!">About Information</flux:heading>
-                <flux:button variant="primary" icon="pencil-square" wire:click="openModal">Edit Information</flux:button>
-            </div>
-
             <div class="space-y-6">
                 <div>
                     <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-1">Title</h4>
@@ -48,7 +44,7 @@
     <flux:modal wire:model="isOpen" class="max-w-3xl">
         <div class="space-y-6">
             <div>
-                <flux:heading size="lg">Edit About Information</flux:heading>
+                <flux:heading size="lg">Edit About Us Information</flux:heading>
                 <flux:text class="mt-2">Update your company information displayed on the about page.</flux:text>
             </div>
 
@@ -120,7 +116,7 @@
                     <flux:modal.close>
                         <flux:button wire:click="closeModal" variant="ghost">Cancel</flux:button>
                     </flux:modal.close>
-                    <flux:button type="submit" variant="primary">Update Information</flux:button>
+                    <flux:button type="submit" variant="primary">Update</flux:button>
                 </div>
             </form>
         </div>
