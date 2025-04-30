@@ -492,7 +492,7 @@ h1,
 @media (min-width: 1400px) {
   h1,
   .display-heading-1 {
-    font-size: 104px;
+    font-size: 5rem;
   }
 }
 
