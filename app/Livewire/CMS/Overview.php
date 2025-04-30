@@ -10,7 +10,7 @@ use App\Models\Project;
 use App\Models\WorkProcess;
 use Livewire\Component;
 
-class Dashboard extends Component
+class Overview extends Component
 {
     public function render()
     {
@@ -47,7 +47,7 @@ class Dashboard extends Component
             ],
         ];
 
-        return view('livewire.cms.dashboard', [
+        return view('livewire.cms.overview', [
             'stats' => $stats
         ]);
     }
