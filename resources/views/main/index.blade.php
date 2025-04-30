@@ -66,7 +66,7 @@
                         <!-- Hero Left Block -->
                         <!-- Hero Right Block -->
                         <div class="mx-auto inline-block max-w-[495px] overflow-hidden rounded-[25px] bg-colorButteryWhite p-[5px] lg:mx-0">
-                            <img src="{{ Storage::url($hero->image) }}" alt="hero-img" width="485" height="540" class="h-full w-full rounded-[20px] object-cover" />
+                            <img src="{{ Storage::url($hero->image_path) }}" alt="{{ $hero->title }}" width="485" height="540" class="h-full w-full rounded-[20px] object-cover" />
                         </div>
                         <!-- Hero Right Block -->
 
